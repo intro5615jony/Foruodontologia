@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <!-- Square Outer Frame -->
+  <rect x="42" y="42" width="416" height="416" fill="none" stroke="#B88A5A" stroke-width="3" rx="4" />
+  
+  <!-- "For" Calligraphic & Brush Artwork -->
+  <g fill="#3B332D" stroke="#3B332D">
+    <!-- Capital F top flourish and elegant stem -->
+    <path d="M 135 130 C 175 124, 225 120, 245 132 C 235 138, 208 140, 180 142 C 172 178, 160 218, 134 258 C 128 266, 122 268, 118 262 C 120 244, 134 208, 142 168 C 124 174, 108 184, 98 198 C 92 205, 87 203, 90 193 C 100 166, 118 146, 142 136 Z" stroke-width="1" />
+    <!-- F cross flourish -->
+    <path d="M 125 235 C 146 220, 172 204, 194 184 C 197 180, 202 184, 197 190 C 168 226, 142 268, 132 318 C 128 328, 120 326, 122 312 C 126 278, 138 242, 148 212 C 136 222, 122 232, 108 242 C 103 245, 100 242, 103 236 C 110 226, 120 216, 128 208 Z" stroke-width="1" />
+    
+    <!-- Letter "o" -->
+    <path d="M 230 198 C 248 168, 276 168, 282 194 C 288 222, 268 262, 240 262 C 220 262, 214 230, 230 198 Z M 245 204 C 236 222, 238 242, 248 245 C 258 247, 268 222, 265 204 C 262 188, 252 188, 245 204 Z" stroke-width="1" />
+    
+    <!-- Letter "r" -->
+    <path d="M 292 234 C 300 208, 308 184, 314 174 C 320 164, 330 164, 340 174 C 350 184, 360 188, 378 178 C 388 172, 396 184, 382 196 C 360 210, 344 198, 334 188 C 326 206, 316 236, 300 266 C 295 274, 286 268, 292 248 Z" stroke-width="1" />
+  </g>
+  
+  <!-- Stylized "U" / Smile Swash (Caramelo Brush) -->
+  <g fill="#B88A5A" stroke="#B88A5A">
+    <path d="M 172 240 C 178 296, 214 348, 270 348 C 332 348, 388 290, 408 222 C 413 207, 423 212, 415 228 C 390 280, 342 364, 264 364 C 192 364, 152 306, 152 240 C 152 230, 169 230, 172 240 Z" stroke-width="1.5" />
+    <path d="M 344 224 C 364 234, 380 240, 392 245 C 397 247, 394 253, 387 253 C 366 253, 348 240, 340 232 Z" stroke-width="1" />
+  </g>
+  
+  <!-- ODONTOLOGIA -->
+  <text x="250" y="396" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="16" font-weight="700" letter-spacing="10" fill="#3B332D" text-anchor="middle">ODONTOLOGIA</text>
+  
+  <!-- ESPECIALIZADA with fine side lines -->
+  <line x1="72" y1="428" x2="114" y2="428" stroke="#B88A5A" stroke-width="1.5" />
+  <text x="250" y="433" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="13.5" font-weight="600" letter-spacing="8" fill="#B88A5A" text-anchor="middle">ESPECIALIZADA</text>
+  <line x1="386" y1="428" x2="428" y2="428" stroke="#B88A5A" stroke-width="1.5" />
+</svg>

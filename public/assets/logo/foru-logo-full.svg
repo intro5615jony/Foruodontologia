@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <!-- Metallic Rose Gold / Copper Gradient matching the brand identity -->
+    <linearGradient id="roseGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#DE9F75" />
+      <stop offset="25%" stop-color="#C57E52" />
+      <stop offset="50%" stop-color="#E7BA99" />
+      <stop offset="75%" stop-color="#B87346" />
+      <stop offset="100%" stop-color="#D6976E" />
+    </linearGradient>
+    <linearGradient id="goldShine" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#C57E52" />
+      <stop offset="35%" stop-color="#E2B18E" />
+      <stop offset="70%" stop-color="#B26C40" />
+      <stop offset="100%" stop-color="#D99B72" />
+    </linearGradient>
+  </defs>
+
+  <!-- Outer Square Frame with bottom opening for ESPECIALIZADA -->
+  <!-- Top line -->
+  <line x1="36" y1="46" x2="464" y2="46" stroke="url(#roseGoldGrad)" stroke-width="3.5" stroke-linecap="square" />
+  <!-- Left line -->
+  <line x1="36" y1="46" x2="36" y2="454" stroke="url(#roseGoldGrad)" stroke-width="3.5" stroke-linecap="square" />
+  <!-- Right line -->
+  <line x1="464" y1="46" x2="464" y2="454" stroke="url(#roseGoldGrad)" stroke-width="3.5" stroke-linecap="square" />
+  <!-- Bottom line left segment -->
+  <line x1="36" y1="454" x2="118" y2="454" stroke="url(#roseGoldGrad)" stroke-width="3.5" stroke-linecap="round" />
+  <!-- Bottom line right segment -->
+  <line x1="382" y1="454" x2="464" y2="454" stroke="url(#roseGoldGrad)" stroke-width="3.5" stroke-linecap="round" />
+
+  <!-- Central "For" Calligraphic & Brush Artwork -->
+  <g fill="url(#roseGoldGrad)" stroke="url(#roseGoldGrad)">
+    <!-- Capital F top flourish bar -->
+    <path d="M 196 102 C 205 98, 225 106, 252 110 C 235 116, 210 118, 192 118 C 172 120, 150 128, 116 142 C 92 152, 86 155, 90 146 C 98 132, 126 116, 172 108 C 185 105, 194 103, 196 102 Z" stroke-width="0.5" />
+    
+    <!-- Capital F main stem (organic dry-brush style) -->
+    <path d="M 194 104 C 182 136, 154 212, 138 274 C 130 306, 120 326, 115 342 C 113 346, 118 348, 122 342 C 134 324, 146 288, 158 248 C 168 214, 180 172, 192 124 C 195 114, 196 107, 194 104 Z" stroke-width="0.5" />
+    
+    <!-- Capital F crossbar leading into the letters -->
+    <path d="M 98 258 C 112 254, 132 242, 160 236 C 172 234, 178 236, 168 244 C 148 258, 130 274, 102 284 C 95 286, 94 278, 98 258 Z" stroke-width="0.5" />
+    <path d="M 148 238 C 162 232, 195 220, 206 218 C 214 216, 218 220, 212 226 C 196 242, 168 266, 142 278 C 136 280, 136 270, 148 238 Z" stroke-width="0.5" />
+
+    <!-- Letter 'o' -->
+    <path d="M 234 192 C 248 184, 266 186, 268 210 C 270 238, 252 274, 232 274 C 218 274, 214 246, 224 218 C 228 206, 230 196, 234 192 Z M 238 214 C 234 230, 236 256, 244 256 C 252 256, 256 234, 254 218 C 252 204, 244 204, 238 214 Z" stroke-width="0.5" />
+    
+    <!-- Letter 'r' -->
+    <path d="M 282 228 C 288 202, 298 188, 310 184 C 324 180, 334 186, 344 194 C 354 200, 362 192, 356 186 C 342 176, 328 174, 314 180 C 304 186, 298 198, 294 212 C 286 240, 276 268, 268 288 C 265 294, 272 296, 276 288 C 280 274, 284 254, 288 234 Z" stroke-width="0.5" />
+
+    <!-- Right brush dash flourish next to 'r' -->
+    <path d="M 348 226 C 362 232, 386 236, 412 234 C 420 233, 420 240, 414 244 C 388 260, 362 254, 346 238 C 344 234, 345 230, 348 226 Z" stroke-width="0.5" />
+  </g>
+
+  <!-- Smile / Swash "U" Brushstroke Underneath -->
+  <g fill="url(#goldShine)" stroke="url(#goldShine)">
+    <!-- Main curving smile crescent -->
+    <path d="M 182 248 C 172 278, 172 316, 196 352 C 228 400, 284 414, 336 398 C 382 384, 414 340, 426 274 C 428 264, 432 268, 430 276 C 416 352, 372 414, 308 424 C 242 434, 184 398, 156 338 C 144 310, 146 266, 174 242 C 180 238, 184 242, 182 248 Z" stroke-width="0.5" />
+    
+    <!-- Bristled textured brush tail on right side of the smile -->
+    <path d="M 388 288 C 398 274, 414 258, 422 248 C 424 246, 426 250, 424 256 C 412 284, 396 312, 378 334 C 374 338, 372 334, 376 326 C 384 308, 392 294, 388 288 Z" stroke-width="0.5" />
+  </g>
+
+  <!-- Typography: ODONTOLOGIA -->
+  <text x="250" y="416" font-family="'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif" font-size="14.5" font-weight="700" letter-spacing="11" fill="url(#roseGoldGrad)" text-anchor="middle">ODONTOLOGIA</text>
+
+  <!-- Typography: ESPECIALIZADA -->
+  <text x="250" y="458" font-family="'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif" font-size="12.5" font-weight="600" letter-spacing="8" fill="url(#roseGoldGrad)" text-anchor="middle">ESPECIALIZADA</text>
+</svg>

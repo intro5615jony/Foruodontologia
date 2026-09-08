@@ -1,0 +1,6 @@
+{
+  "name": "ForU Odontologia Especializada",
+  "description": "Site institucional premium, minimalista e sofisticado da ForU Odontologia Especializada.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

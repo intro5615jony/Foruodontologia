@@ -192,11 +192,6 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
                 </div>
               </div>
 
-              {/* Pagamento e Convênios — Preservado apenas no Desktop, oculto no Mobile */}
-              <div className="hidden md:block pt-3 border-t border-[#B88A5A]/20 space-y-1 text-xs text-[#E9DFCF]/75 font-light">
-                <p><span className="text-[#E9DFCF]/90 font-medium">Pagamento:</span> {CLINIC_INFO.paymentMethods}</p>
-                <p><span className="text-[#E9DFCF]/90 font-medium">Convênios:</span> {CLINIC_INFO.insurance}</p>
-              </div>
             </div>
           </div>
 

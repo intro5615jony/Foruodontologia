@@ -1,9 +1,13 @@
+import type { CSSProperties } from 'react';
+
 export interface HeroSlide {
   id: string;
   image: string;
   alt: string;
   caption: string;
   objectPosition?: string;
+  imageClassName?: string;
+  imageStyle?: CSSProperties;
 }
 
 export interface SpecialtyBarItem {
@@ -40,6 +44,9 @@ export interface TreatmentItem {
   image: string;
   benefits: string[];
   indications?: string[];
+  objectPosition?: string;
+  modalObjectPosition?: string;
+  modalObjectFit?: 'cover' | 'contain';
 }
 
 export interface TestimonialPlaceholderItem {

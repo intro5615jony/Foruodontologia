@@ -4,7 +4,6 @@ import { Hero } from './components/Hero';
 import { SpecialtiesBar } from './components/SpecialtiesBar';
 import { AboutClinic } from './components/AboutClinic';
 import { WhyForU } from './components/WhyForU';
-import { PhilosophyThree } from './components/PhilosophyThree';
 import { ClinicSpace } from './components/ClinicSpace';
 import { Specialists } from './components/Specialists';
 import { VisualBreak } from './components/VisualBreak';
@@ -15,13 +14,37 @@ import { BookingContact } from './components/BookingContact';
 import { Footer } from './components/Footer';
 import { AppointmentModal } from './components/AppointmentModal';
 import { MessageSquare } from 'lucide-react';
-import { CLINIC_INFO } from './data';
+import { CLINIC_INFO, WHATSAPP_MESSAGES, getWhatsAppUrl, getDoctorWhatsAppUrl } from './data';
 
 export default function App() {
   const [activeSection, setActiveSection] = useState<string>('inicio');
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [selectedTreatment, setSelectedTreatment] = useState<string>('');
   const [selectedSpecialist, setSelectedSpecialist] = useState<string>('');
+  const [selectedTreatmentId, setSelectedTreatmentId] = useState<string>('');
+  const [selectedTreatmentTimestamp, setSelectedTreatmentTimestamp] = useState<number>(0);
+  const [doctorSelection, setDoctorSelection] = useState<{ doctorName: string; timestamp: number } | null>(null);
+  const [treatmentSelection, setTreatmentSelection] = useState<{ treatmentTitle: string; timestamp: number } | null>(null);
+
+  const handleDoctorSelect = (doctorName: string) => {
+    setDoctorSelection({
+      doctorName,
+      timestamp: Date.now(),
+    });
+  };
+
+  const handleTreatmentSelect = (treatmentTitle: string) => {
+    setTreatmentSelection({
+      treatmentTitle,
+      timestamp: Date.now(),
+    });
+  };
+
+  const handleSelectTreatmentNav = (treatmentId: string) => {
+    setSelectedTreatmentId(treatmentId);
+    setSelectedTreatmentTimestamp(Date.now());
+    setActiveSection('tratamentos');
+  };
 
   // Robust ScrollSpy to accurately track the active section in view for the header
   useEffect(() => {
@@ -81,20 +104,11 @@ export default function App() {
   }, []);
 
   const handleOpenBooking = (itemOrDoctor?: string) => {
-    // If the string starts with 'Dra.', treat it as doctor preference, otherwise treatment
-    if (itemOrDoctor) {
-      if (itemOrDoctor.startsWith('Dra.')) {
-        setSelectedSpecialist(itemOrDoctor);
-        setSelectedTreatment('');
-      } else {
-        setSelectedTreatment(itemOrDoctor);
-        setSelectedSpecialist('');
-      }
-    } else {
-      setSelectedTreatment('');
-      setSelectedSpecialist('');
+    if (itemOrDoctor && itemOrDoctor.startsWith('Dra.')) {
+      window.open(getDoctorWhatsAppUrl(itemOrDoctor), '_blank');
+      return;
     }
-    setIsModalOpen(true);
+    window.open(getWhatsAppUrl(WHATSAPP_MESSAGES.general), '_blank');
   };
 
   const handleCloseBooking = () => {
@@ -108,6 +122,7 @@ export default function App() {
         onOpenBooking={() => handleOpenBooking()}
         activeSection={activeSection}
         onSelectSection={setActiveSection}
+        onSelectTreatment={handleSelectTreatmentNav}
       />
 
       {/* Main Content Sections (One-Page Editorial Architecture) */}
@@ -116,7 +131,7 @@ export default function App() {
         <Hero onOpenBooking={() => handleOpenBooking()} />
 
         {/* 02 — NOSSAS ESPECIALIDADES (Faixa horizontal minimalista logo abaixo do Hero) */}
-        <SpecialtiesBar onSelectTreatment={(treatmentId) => handleOpenBooking(treatmentId)} />
+        <SpecialtiesBar onSelectTreatment={(treatmentId) => handleSelectTreatmentNav(treatmentId)} />
 
         {/* 03 — NOSSA HISTÓRIA (Sobre a For U - Uma história construída juntas) */}
         <AboutClinic onOpenBooking={() => handleOpenBooking()} />
@@ -124,20 +139,21 @@ export default function App() {
         {/* 04 — POR QUE FOR U? (Layout dividido com fundo marrom escuro) */}
         <WhyForU onOpenBooking={() => handleOpenBooking()} />
 
-        {/* 10 — AS TRÊS JUNTAS / FILOSOFIA FOR U (Três especialistas. Um cuidado pensado por inteiro) */}
-        <PhilosophyThree onOpenBooking={() => handleOpenBooking()} />
-
         {/* 09 — A CLÍNICA (O Espaço Físico - Mosaico fotográfico editorial) */}
         <ClinicSpace />
 
         {/* 05 — CONHEÇA AS ESPECIALISTAS (Apresentação individual editorial com peso igual) */}
-        <Specialists onOpenBooking={(doctor) => handleOpenBooking(doctor)} />
+        <Specialists onSelectDoctor={handleDoctorSelect} />
 
         {/* 07 — QUEBRA VISUAL / FOTOGRAFIA (Grande fotografia panorâmica como protagonista) */}
         <VisualBreak />
 
         {/* 06 — TRATAMENTOS (Cards simplificados, sem claims exagerados, modal informativo) */}
-        <Treatments onOpenBooking={(treatment) => handleOpenBooking(treatment)} />
+        <Treatments
+          onOpenBooking={(treatment) => handleOpenBooking(treatment)}
+          selectedTreatmentId={selectedTreatmentId}
+          selectedTreatmentTimestamp={selectedTreatmentTimestamp}
+        />
 
         {/* 11 — AVALIAÇÕES (Experiências na For U - Sem fake reviews, placeholders Google) */}
         <Testimonials />
@@ -146,7 +162,11 @@ export default function App() {
         <CareTransition onOpenBooking={() => handleOpenBooking()} />
 
         {/* 12, 13, 14 — AGENDAMENTO, CONTATO & LOCALIZAÇÃO (Telefone/WhatsApp separados, Visite a For U) */}
-        <BookingContact initialTreatment={selectedTreatment} initialSpecialist={selectedSpecialist} />
+        <BookingContact
+          initialTreatment={selectedTreatment}
+          initialSpecialist={selectedSpecialist}
+          doctorSelection={doctorSelection}
+        />
       </main>
 
       {/* 15 — RODAPÉ (Dados regulatórios estritos com placeholders e canais separados) */}
@@ -162,7 +182,7 @@ export default function App() {
 
       {/* Discreet Floating WhatsApp Concierge Button */}
       <a
-        href={`https://wa.me/${CLINIC_INFO.whatsappRaw}?text=${encodeURIComponent(CLINIC_INFO.whatsappDefaultMessage)}`}
+        href={getWhatsAppUrl(WHATSAPP_MESSAGES.floating)}
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-40 bg-[#B88A5A] text-[#F7F4EF] p-3.5 rounded-full shadow-xl hover:bg-[#3B332D] hover:-translate-y-1 transition-all duration-200 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#B88A5A] cursor-pointer"

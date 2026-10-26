@@ -1,9 +1,133 @@
-import React from 'react';
-import { CLINIC_SPACE_PHOTOS } from '../data';
+import React, { useState, useEffect } from 'react';
+
+const WAITING_ROOM_SLIDES = [
+  {
+    id: 'waiting-1',
+    image: '/assets/clinic/sala-espera-1.png',
+    alt: 'Sala de espera acolhedora com sofás confortáveis e plantas',
+    objectPosition: 'object-[center_45%]',
+  },
+  {
+    id: 'waiting-2',
+    image: '/assets/clinic/sala-espera-2.png',
+    alt: 'Cantinho de café aconchegante e moderno na sala de espera',
+    objectPosition: 'object-[center_38%]',
+  },
+  {
+    id: 'waiting-3',
+    image: '/assets/clinic/sala-espera-kids.png',
+    alt: 'Cantinho infantil com TV e brinquedos educativos preparado para as crianças',
+    objectPosition: 'object-[center_38%]',
+  },
+];
+
+const ADVANCED_TECH_SLIDES = [
+  {
+    id: 'tech-1',
+    image: '/assets/clinic/tecnologia-1.jpg',
+    alt: 'Scanner intraoral 3D digital para escaneamento e diagnóstico de alta precisão',
+    objectPosition: 'object-[center_35%]',
+  },
+  {
+    id: 'tech-2',
+    image: '/assets/clinic/tecnologia-2.jpg',
+    alt: 'Modelo anatômico odontológico demonstrando implantes e reabilitação oral',
+    objectPosition: 'object-[center_45%]',
+  },
+  {
+    id: 'tech-3',
+    image: '/assets/clinic/tecnologia-3.jpg',
+    alt: 'Equipamento e tecnologia odontológica moderna para procedimentos precisos e seguros',
+    objectPosition: 'object-[center_45%]',
+  },
+];
+
+const DENTAL_OFFICE_SLIDES = [
+  {
+    id: 'consultorio-01',
+    image: '/assets/clinica/consultorio-01.webp',
+    alt: 'Consultório odontológico moderno com mesa de atendimento, flores e cadeira odontológica',
+    objectPosition: 'object-[center_35%]',
+  },
+  {
+    id: 'consultorio-02',
+    image: '/assets/clinica/consultorio-02.webp',
+    alt: 'Consultório odontológico com painel em madeira ripada, iluminação acolhedora e equipamentos',
+    objectPosition: 'object-[center_35%]',
+  },
+  {
+    id: 'consultorio-03',
+    image: '/assets/clinica/consultorio-03.webp',
+    alt: 'Visão completa do consultório com iluminação natural, armários e cadeira odontológica',
+    objectPosition: 'object-[center_40%]',
+  },
+];
 
 export const ClinicSpace: React.FC = () => {
-  const mainPhoto = CLINIC_SPACE_PHOTOS.find(p => p.aspect === 'large') || CLINIC_SPACE_PHOTOS[0];
-  const secondaryPhotos = CLINIC_SPACE_PHOTOS.filter(p => p.id !== mainPhoto.id);
+  const [activeSlideIndex, setActiveSlideIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+
+  // Monitora preferência de redução de movimento do sistema
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setPrefersReducedMotion(mediaQuery.matches);
+
+    const handler = (e: MediaQueryListEvent) => {
+      setPrefersReducedMotion(e.matches);
+    };
+
+    mediaQuery.addEventListener('change', handler);
+    return () => mediaQuery.removeEventListener('change', handler);
+  }, []);
+
+  // Sincronização centralizada dos três carrosséis a cada 5 segundos
+  // Pausa automaticamente se o usuário passar o mouse sobre o card ou se houver prefers-reduced-motion
+  useEffect(() => {
+    if (prefersReducedMotion || isHovered) return;
+
+    let timer: ReturnType<typeof setInterval>;
+
+    const startTimer = () => {
+      timer = setInterval(() => {
+        setActiveSlideIndex((prevIndex) => (prevIndex + 1) % 3);
+      }, 5000);
+    };
+
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        clearInterval(timer);
+      } else {
+        clearInterval(timer);
+        startTimer();
+      }
+    };
+
+    startTimer();
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    return () => {
+      clearInterval(timer);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
+  }, [prefersReducedMotion, isHovered]);
+
+  // Pré-carregamento das imagens dos três carrosséis para transições instantâneas e sem piscadas
+  useEffect(() => {
+    const allImages = [
+      ...WAITING_ROOM_SLIDES.map((s) => s.image),
+      ...ADVANCED_TECH_SLIDES.map((s) => s.image),
+      ...DENTAL_OFFICE_SLIDES.map((s) => s.image),
+    ];
+
+    allImages.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
+
+  const transitionDurationClass = prefersReducedMotion ? 'duration-0' : 'duration-[600ms]';
 
   return (
     <section className="py-14 sm:py-24 lg:py-32 bg-[#F7F4EF] text-[#3B332D] border-t border-[#E9DFCF]">
@@ -23,71 +147,107 @@ export const ClinicSpace: React.FC = () => {
         </div>
 
         {/* Editorial Photo Mosaic */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-8 items-stretch mb-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-8 items-stretch">
           
-          {/* Main Large Photo */}
+          {/* Main Large Photo / Automatic Carousel: Sala de Espera */}
           <div className="lg:col-span-7">
             <div className="relative rounded-2xl overflow-hidden bg-[#E9DFCF] border border-[#E9DFCF] shadow-xs h-full min-h-[260px] sm:min-h-[440px] group">
-              <img
-                src={mainPhoto.image}
-                alt={mainPhoto.title}
-                className="w-full h-full object-cover object-center brightness-[0.98] contrast-[1.02] saturate-[0.96] transition-transform duration-700 group-hover:scale-103"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#3B332D]/75 via-[#3B332D]/15 to-transparent pointer-events-none" />
-              <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 text-[#F7F4EF]">
+              {/* Carousel Slides */}
+              {WAITING_ROOM_SLIDES.map((slide, index) => {
+                const isActive = index === activeSlideIndex;
+                return (
+                  <img
+                    key={slide.id}
+                    src={slide.image}
+                    alt={slide.alt}
+                    className={`absolute inset-0 w-full h-full object-cover ${slide.objectPosition} brightness-[0.98] contrast-[1.02] saturate-[0.96] transition-opacity ${transitionDurationClass} ease-in-out ${
+                      isActive ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
+                    }`}
+                    loading={index === 0 ? 'eager' : 'lazy'}
+                  />
+                );
+              })}
+
+              {/* Bottom Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#3B332D]/80 via-[#3B332D]/20 to-transparent pointer-events-none z-20" />
+
+              {/* Fixed Content Overlay */}
+              <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 text-[#F7F4EF] z-30">
                 <h3 className="font-heading text-lg sm:text-2xl font-normal mb-1">
-                  {mainPhoto.title}
+                  Sala de Espera
                 </h3>
                 <p className="text-xs sm:text-sm text-[#E9DFCF]/85 font-light">
-                  {mainPhoto.description}
+                  Um ambiente acolhedor e confortável, pensado para receber você e sua família com carinho e tranquilidade.
                 </p>
-                <span className="inline-block text-[9.5px] sm:text-[10px] uppercase tracking-wider text-[#D4B88A] mt-1.5 sm:mt-2 font-medium">
-                  Espaço & Acolhimento For U
+                <span className="inline-block text-[9.5px] sm:text-[10px] uppercase tracking-wider text-[#D4B88A] mt-1.5 sm:mt-2 font-semibold">
+                  ESPAÇO & ACOLHIMENTO FOR U
                 </span>
               </div>
             </div>
           </div>
 
-          {/* Secondary Photos Column */}
+          {/* Secondary Photos Column: Tecnologia Avançada & Consultório Odontológico */}
           <div className="lg:col-span-5 flex flex-col gap-5 sm:gap-8 justify-between">
-            {secondaryPhotos.slice(0, 2).map((photo) => (
-              <div
-                key={photo.id}
-                className="relative rounded-2xl overflow-hidden bg-[#E9DFCF] border border-[#E9DFCF] shadow-xs flex-1 min-h-[180px] sm:min-h-[210px] group"
-              >
-                <img
-                  src={photo.image}
-                  alt={photo.title}
-                  className="w-full h-full object-cover object-center brightness-[0.98] contrast-[1.02] saturate-[0.96] transition-transform duration-700 group-hover:scale-103"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#3B332D]/70 via-[#3B332D]/15 to-transparent pointer-events-none" />
-                <div className="absolute bottom-3.5 left-3.5 right-3.5 sm:bottom-4 sm:left-4 sm:right-4 text-[#F7F4EF]">
-                  <h4 className="font-heading text-base sm:text-lg font-normal mb-0.5">
-                    {photo.title}
-                  </h4>
-                  <p className="text-[11px] text-[#E9DFCF]/80 font-light">
-                    {photo.description}
-                  </p>
-                </div>
+            {/* Top Card: Tecnologia Avançada (Automatic Carousel) */}
+            <div className="relative rounded-2xl overflow-hidden bg-[#E9DFCF] border border-[#E9DFCF] shadow-xs flex-1 min-h-[180px] sm:min-h-[210px] group">
+              {ADVANCED_TECH_SLIDES.map((slide, index) => {
+                const isActive = index === activeSlideIndex;
+                return (
+                  <img
+                    key={slide.id}
+                    src={slide.image}
+                    alt={slide.alt}
+                    className={`absolute inset-0 w-full h-full object-cover ${slide.objectPosition} brightness-[0.98] contrast-[1.02] saturate-[0.96] transition-opacity ${transitionDurationClass} ease-in-out ${
+                      isActive ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
+                    }`}
+                    loading={index === 0 ? 'eager' : 'lazy'}
+                  />
+                );
+              })}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#3B332D]/70 via-[#3B332D]/15 to-transparent pointer-events-none z-20" />
+              <div className="absolute bottom-3.5 left-3.5 right-3.5 sm:bottom-4 sm:left-4 sm:right-4 text-[#F7F4EF] z-30">
+                <h4 className="font-heading text-base sm:text-lg font-normal mb-0.5">
+                  Tecnologia Avançada
+                </h4>
+                <p className="text-[11px] text-[#E9DFCF]/80 font-light">
+                  Equipamentos e tecnologias que proporcionam mais precisão, segurança e conforto em cada atendimento.
+                </p>
               </div>
-            ))}
+            </div>
+
+            {/* Bottom Card: Consultório Odontológico (Automatic Carousel Sincronizado com Pause on Hover) */}
+            <div
+              className="relative rounded-2xl overflow-hidden bg-[#E9DFCF] border border-[#E9DFCF] shadow-xs flex-1 min-h-[180px] sm:min-h-[210px] group cursor-pointer"
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+            >
+              {DENTAL_OFFICE_SLIDES.map((slide, index) => {
+                const isActive = index === activeSlideIndex;
+                return (
+                  <img
+                    key={slide.id}
+                    src={slide.image}
+                    alt={slide.alt}
+                    className={`absolute inset-0 w-full h-full object-cover ${slide.objectPosition} brightness-[0.98] contrast-[1.02] saturate-[0.96] transition-opacity ${transitionDurationClass} ease-in-out ${
+                      isActive ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
+                    }`}
+                    loading={index === 0 ? 'eager' : 'lazy'}
+                  />
+                );
+              })}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#3B332D]/70 via-[#3B332D]/15 to-transparent pointer-events-none z-20" />
+              <div className="absolute bottom-3.5 left-3.5 right-3.5 sm:bottom-4 sm:left-4 sm:right-4 text-[#F7F4EF] z-30">
+                <h4 className="font-heading text-base sm:text-lg font-normal mb-0.5">
+                  Consultório Odontológico
+                </h4>
+                <p className="text-[11px] text-[#E9DFCF]/80 font-light">
+                  Estrutura acolhedora pensada para o seu bem-estar e conforto.
+                </p>
+              </div>
+            </div>
           </div>
 
         </div>
-
-        {/* Bottom Tertiary Photo Strip */}
-        {secondaryPhotos[2] && (
-          <div className="relative rounded-2xl overflow-hidden bg-[#E9DFCF] border border-[#E9DFCF] p-4 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#3B332D]/70 font-light">
-            <p className="font-heading font-normal text-sm text-[#3B332D]">
-              "Ambiente planejado para proporcionar tranquilidade desde a recepção até a conclusão do seu tratamento."
-            </p>
-            <span className="text-[10px] uppercase tracking-wider text-[#B88A5A] font-semibold shrink-0">
-              Estrutura acolhedora e moderna
-            </span>
-          </div>
-        )}
 
       </div>
     </section>

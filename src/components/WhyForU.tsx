@@ -1,12 +1,12 @@
 import React from 'react';
-import { HeartHandshake, Users2, ClipboardCheck, Coffee, Calendar } from 'lucide-react';
+import { HeartHandshake, Users2, ClipboardCheck, Coffee } from 'lucide-react';
 import { WHY_FOR_U_ITEMS } from '../data';
 
 interface WhyForUProps {
-  onOpenBooking: () => void;
+  onOpenBooking?: () => void;
 }
 
-export const WhyForU: React.FC<WhyForUProps> = ({ onOpenBooking }) => {
+export const WhyForU: React.FC<WhyForUProps> = () => {
   const getIcon = (iconName: string) => {
     const iconClass = 'w-4.5 h-4.5 text-[#D4B88A] shrink-0';
     switch (iconName) {
@@ -48,12 +48,12 @@ export const WhyForU: React.FC<WhyForUProps> = ({ onOpenBooking }) => {
                   Por que a For U?
                 </h2>
                 <p className="text-[#E9DFCF]/85 text-sm sm:text-base font-light leading-relaxed">
-                  Priorizamos uma prática odontológica transparente e compassiva, onde a dedicação aos detalhes faz toda a diferença na sua experiência.
+                  Acreditamos que cuidar de um sorriso é, antes de tudo, cuidar de uma pessoa. Na For U, cada paciente é recebido com atenção, respeito e carinho. Nosso compromisso vai além dos tratamentos odontológicos: queremos proporcionar saúde, confiança e bem-estar, valorizando a individualidade e a história de cada pessoa.
                 </p>
               </div>
 
               {/* Editorial Differentials: Icon + Title + Description without cards or boxes */}
-              <div className="space-y-6 sm:space-y-7 mb-8 sm:mb-10">
+              <div className="space-y-6 sm:space-y-7">
                 {WHY_FOR_U_ITEMS.map((item) => (
                   <div key={item.id} className="flex items-start gap-3.5 sm:gap-4 group">
                     <div className="mt-1 text-[#D4B88A] shrink-0 transition-transform duration-200 group-hover:scale-105">
@@ -70,19 +70,6 @@ export const WhyForU: React.FC<WhyForUProps> = ({ onOpenBooking }) => {
                   </div>
                 ))}
               </div>
-
-              {/* Call to Action: Desktop (exibido na coluna esquerda) */}
-              <div className="hidden lg:block pt-1">
-                <button
-                  type="button"
-                  onClick={onOpenBooking}
-                  className="btn-primary px-8 sm:px-9 py-3.5 text-xs uppercase tracking-widest font-semibold inline-flex items-center gap-2 cursor-pointer shadow-md hover:shadow-lg transition-all"
-                  id="why-foru-desktop-cta"
-                >
-                  <Calendar className="w-4 h-4" />
-                  <span>Agendar Sua Avaliação</span>
-                </button>
-              </div>
             </div>
           </div>
 
@@ -90,9 +77,9 @@ export const WhyForU: React.FC<WhyForUProps> = ({ onOpenBooking }) => {
           <div className="lg:col-span-5 w-full">
             <div className="relative rounded-2xl overflow-hidden bg-[#2A2420] border border-[#D4B88A]/25 shadow-xs aspect-[4/3] sm:aspect-[16/11] lg:aspect-[4/5] xl:aspect-[5/6] w-full max-w-lg mx-auto lg:max-w-none">
               <img
-                src="/assets/clinic/FORU.jpg"
-                alt="Recepção e logotipo da clínica For U Odontologia Especializada"
-                className="w-full h-full object-cover object-[center_36%] brightness-[0.99] contrast-[1.01] transition-transform duration-700 hover:scale-[1.01]"
+                src="/assets/clinic/recepcao-foru.png"
+                alt="Recepção acolhedora e moderna da clínica For U Odontologia Especializada"
+                className="w-full h-full object-cover object-[36%_28%] brightness-[0.99] contrast-[1.01] transition-transform duration-700 hover:scale-[1.01]"
                 loading="lazy"
                 referrerPolicy="no-referrer"
               />
@@ -100,25 +87,12 @@ export const WhyForU: React.FC<WhyForUProps> = ({ onOpenBooking }) => {
               {/* Refined and discreet caption */}
               <div className="absolute bottom-3 left-3 right-3 sm:bottom-5 sm:left-5 sm:right-5 p-3 sm:p-3.5 rounded-xl bg-[#3B332D]/90 backdrop-blur-md border border-[#D4B88A]/30 text-left">
                 <p className="font-heading text-xs sm:text-sm text-[#F7F4EF] font-normal leading-snug">
-                  "O cuidado que você merece, planejado com calma e atenção exclusiva."
+                  "Mais do que transformar sorrisos, cuidamos de pessoas."
                 </p>
-                <span className="block text-[9.5px] text-[#D4B88A] uppercase tracking-wider mt-1 font-medium">
-                  Recepção & Atendimento For U
+                <span className="block text-[9.5px] text-[#D4B88A] uppercase tracking-wider mt-1 font-semibold">
+                  RECEPÇÃO FOR U
                 </span>
               </div>
-            </div>
-
-            {/* Call to Action: Mobile (exibido abaixo da fotografia para fechar a narrativa com naturalidade) */}
-            <div className="block lg:hidden mt-8 text-center sm:text-left">
-              <button
-                type="button"
-                onClick={onOpenBooking}
-                className="btn-primary w-full sm:w-auto min-h-[48px] px-8 py-3.5 text-xs uppercase tracking-widest font-semibold inline-flex items-center justify-center gap-2 cursor-pointer shadow-md"
-                id="why-foru-mobile-cta"
-              >
-                <Calendar className="w-4 h-4" />
-                <span>Agendar Sua Avaliação</span>
-              </button>
             </div>
           </div>
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowUp, Instagram, Phone, MessageSquare, Mail, Clock } from 'lucide-react';
-import { CLINIC_INFO } from '../data';
+import { CLINIC_INFO, WHATSAPP_MESSAGES, getWhatsAppUrl } from '../data';
 
 interface FooterProps {
   onOpenBooking: () => void;
@@ -34,44 +34,42 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
         
         {/* Top Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 mb-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 mb-10 sm:mb-14">
           
-          {/* Brand & Regulatory Column */}
-          <div className="lg:col-span-4 space-y-5">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 flex items-center justify-center">
+          {/* 1, 2, 3: Brand, Institucional & Endereço */}
+          <div className="lg:col-span-4 space-y-6">
+            <div className="flex flex-col items-start">
+              <a
+                href="#inicio"
+                onClick={(e) => handleNavClick(e, '#inicio')}
+                className="focus:outline-none focus:ring-1 focus:ring-[#D4B88A] rounded-xl transition-opacity hover:opacity-95 block"
+                aria-label="For U Odontologia Especializada - Página Inicial"
+              >
                 <img
-                  src="/assets/logo/foru-logo-full.svg"
+                  src="/assets/logo/foru-logo-light.svg"
                   alt="For U Odontologia Especializada"
-                  className="w-full h-full object-contain filter drop-shadow-xs"
-                  width={40}
-                  height={40}
+                  className="w-40 sm:w-48 lg:w-52 h-auto object-contain select-none"
+                  width={208}
+                  height={208}
+                  loading="lazy"
                 />
-              </div>
-              <div>
-                <span className="font-heading text-lg tracking-tight leading-none font-medium text-[#F7F4EF]">
-                  For U
-                </span>
-                <span className="block text-[9px] tracking-[0.25em] font-semibold uppercase mt-0.5 text-[#D4B88A]">
-                  Odontologia Especializada
-                </span>
-              </div>
+              </a>
             </div>
 
             <p className="text-xs sm:text-sm text-[#E9DFCF]/80 font-light leading-relaxed max-w-sm">
               Odontologia feita com precisão. Cuidado feito para você. Um espaço acolhedor com especialidades integradas para a sua saúde e harmonia do sorriso.
             </p>
 
-            {/* Endereço Confirmado */}
+            {/* Endereço Atualizado */}
             <div className="text-xs text-[#E9DFCF]/80 font-light space-y-0.5">
-              <p className="font-medium text-[#F7F4EF]">Rua Barão do Triunfo, 88 — sala/conjunto 406</p>
+              <p className="font-medium text-[#F7F4EF]">Rua Barão do Triunfo, 88 — Sala/Conjunto 406</p>
               <p>Brooklin — São Paulo/SP</p>
               <p className="text-[11px] text-[#E9DFCF]/60">CEP 04602-000</p>
             </div>
           </div>
 
-          {/* Quick Navigation Links */}
-          <div className="lg:col-span-3 space-y-4">
+          {/* Quick Navigation Links — Exclusivo Desktop e Tablet (Removido do Mobile) */}
+          <div className="hidden md:block lg:col-span-3 space-y-4">
             <h4 className="font-semibold text-xs uppercase tracking-widest text-[#D4B88A]">
               Navegação
             </h4>
@@ -133,7 +131,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
             </ul>
           </div>
 
-          {/* Contact Details (Separated Landlines vs WhatsApp) */}
+          {/* 4: Contato & Horários */}
           <div className="lg:col-span-3 space-y-4">
             <h4 className="font-semibold text-xs uppercase tracking-widest text-[#D4B88A]">
               Contato & Horários
@@ -161,7 +159,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
                 <div>
                   <span className="text-[10px] text-[#E9DFCF]/60 block uppercase font-medium">WhatsApp</span>
                   <a
-                    href={`https://wa.me/${CLINIC_INFO.whatsappRaw}?text=${encodeURIComponent(CLINIC_INFO.whatsappDefaultMessage)}`}
+                    href={getWhatsAppUrl(WHATSAPP_MESSAGES.general)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-[#D4B88A] transition-colors py-0.5 inline-block text-sm font-medium"
@@ -182,20 +180,22 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
                 </div>
               </div>
 
-              {/* Horários */}
+              {/* Horário de Atendimento Atualizado (Sem referência a sábados) */}
               <div className="flex items-start gap-2.5">
                 <Clock className="w-4 h-4 text-[#D4B88A] shrink-0 mt-0.5" />
                 <div>
-                  <span className="text-[10px] text-[#E9DFCF]/60 block uppercase font-medium">Horários</span>
-                  <p className="text-xs">{CLINIC_INFO.hours.weekdays}</p>
-                  <p className="text-xs">{CLINIC_INFO.hours.saturday}</p>
+                  <span className="text-[10px] text-[#E9DFCF]/60 block uppercase font-medium">
+                    Horário de Atendimento
+                  </span>
+                  <p className="text-xs text-[#E9DFCF]/90">Segunda a quinta-feira: 8h às 18h</p>
+                  <p className="text-xs text-[#E9DFCF]/90">Sexta-feira: 8h às 17h</p>
                 </div>
               </div>
 
-              {/* Pagamento e Convênios */}
-              <div className="pt-2 border-t border-[#D4B88A]/15 text-[11px] space-y-0.5 text-[#E9DFCF]/70">
-                <p><span className="text-[#D4B88A]">Pagamento:</span> {CLINIC_INFO.paymentMethods}</p>
-                <p><span className="text-[#D4B88A]">Convênios:</span> {CLINIC_INFO.insurance}</p>
+              {/* Pagamento e Convênios — Preservado apenas no Desktop, oculto no Mobile */}
+              <div className="hidden md:block pt-3 border-t border-[#B88A5A]/20 space-y-1 text-xs text-[#E9DFCF]/75 font-light">
+                <p><span className="text-[#E9DFCF]/90 font-medium">Pagamento:</span> {CLINIC_INFO.paymentMethods}</p>
+                <p><span className="text-[#E9DFCF]/90 font-medium">Convênios:</span> {CLINIC_INFO.insurance}</p>
               </div>
             </div>
           </div>

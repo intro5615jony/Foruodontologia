@@ -46,7 +46,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
                 aria-label="For U Odontologia Especializada - Página Inicial"
               >
                 <img
-                  src="/assets/logo/foru-logo-light.svg"
+                  src="/assets/logo/LOGO FOR U.png"
                   alt="For U Odontologia Especializada"
                   className="w-40 sm:w-48 lg:w-52 h-auto object-contain select-none"
                   width={208}

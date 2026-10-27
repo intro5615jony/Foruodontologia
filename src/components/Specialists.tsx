@@ -161,11 +161,6 @@ export const Specialists: React.FC<SpecialistsProps> = ({ onSelectDoctor }) => {
                           </React.Fragment>
                         ))}
                       </div>
-                      {specialist.specialtyNote && (
-                        <p className="mt-3 text-xs sm:text-sm text-[#3B332D]/75 font-light leading-relaxed">
-                          {specialist.specialtyNote}
-                        </p>
-                      )}
                     </div>
 
                     {/* 6. CTA Exclusivo: Agendar Consulta (direciona para o formulário pré-preenchido) */}

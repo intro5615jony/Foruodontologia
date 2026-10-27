@@ -27,6 +27,7 @@ export interface Specialist {
   bio: string;
   curriculum: string;
   highlights: string[];
+  specialtyNote?: string;
   objectPosition?: string;
   modalObjectPosition?: string;
 }

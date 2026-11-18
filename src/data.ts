@@ -391,7 +391,20 @@ export const SPECIALISTS: Specialist[] = [
     highlights: ['Clínica Geral', 'Endodontia'],
     objectPosition: '50% 10%',
     modalObjectPosition: '50% 10%',
+        },
+    {
+    id: 'dra-giulia',
+    name: 'Dra. Giulia Bautista G. Barbosa',
+    role: 'Cirurgiã-Dentista',
+    cro: 'CROSP 170.831',
+    image: '/assets/specialists/dra-giulia-bautista.png',
+    curriculum: 'Universidade Paulista (UNIP), 2024. Especializanda em Ortodontia pela São Leopoldo Mandic.',
+    bio: 'Cirurgiã-dentista formada pela Universidade Paulista (UNIP) em 2024 e especializanda em Ortodontia pela São Leopoldo Mandic.',
+    highlights: ['Clínica Geral', 'Ortodontia'],
+    objectPosition: '50% 12%',
+    modalObjectPosition: '50% 12%',
   },
+
 ];
 
 // 06 — TRATAMENTOS (Organizados rigorosamente em ordem alfabética crescente A–Z)

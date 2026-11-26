@@ -487,9 +487,9 @@ export const TREATMENTS: TreatmentItem[] = [
     highlightTag: 'Canal Radicular',
     shortDescription: 'Diagnóstico e tratamento dos canais radiculares para alívio de dor e preservação do dente natural.',
     fullDescription: 'Procedimento seguro de limpeza, desinfecção e obturação do canal radicular, visando salvar dentes com alterações na polpa e eliminar infecções.',
-    image: '/assets/treatments/endodontia-com-microscopia.png',
-    objectPosition: 'center',
-    modalObjectPosition: 'center',
+    image: '/assets/treatments/endodontia-microscopia-tatiana.jpg',
+    objectPosition: '60% 40%',
+    modalObjectPosition: '60% 40%',
     modalObjectFit: 'contain',
     benefits: [
       'Alívio de dores dentárias',

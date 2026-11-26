@@ -6,6 +6,7 @@ import { WhyForU } from './components/WhyForU';
 import { ClinicSpace } from './components/ClinicSpace';
 import { Specialists } from './components/Specialists';
 import { VisualBreak } from './components/VisualBreak';
+import { CookieConsent } from './components/CookieConsent';
 import { Treatments } from './components/Treatments';
 import { Testimonials } from './components/Testimonials';
 import { CareTransition } from './components/CareTransition';
@@ -97,6 +98,7 @@ export default function App() {
         <VisualBreak />
       </main>
       <Footer onOpenBooking={() => handleOpenBooking()} />
+      <CookieConsent />
       <AppointmentModal isOpen={isModalOpen} onClose={handleCloseBooking} selectedTreatment={selectedTreatment} selectedSpecialist={selectedSpecialist} />
       <a href={getWhatsAppUrl(WHATSAPP_MESSAGES.floating)} target="_blank" rel="noopener noreferrer" className="fixed bottom-6 right-6 z-40 bg-[#B88A5A] text-[#F7F4EF] p-3.5 rounded-full shadow-xl hover:bg-[#3B332D] hover:-translate-y-1 transition-all duration-200 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#B88A5A] cursor-pointer" aria-label="Conversar no WhatsApp com a For U Odontologia Especializada" title="Falar no WhatsApp"><MessageSquare className="w-5 h-5" /></a>
     </div>

@@ -30,20 +30,14 @@ const ADVANCED_TECH_SLIDES = [
   },
   {
     id: 'tech-2',
-    image: '/assets/clinic/tecnologia-2.jpg',
-    alt: 'Modelo anatômico odontológico demonstrando implantes e reabilitação oral',
+    image: '/assets/clinic/tecnologia-microscopio-real.jpg',
+    alt: 'Microscópio odontológico da For U utilizado na endodontia com microscopia',
     objectPosition: 'object-[center_45%]',
   },
   {
     id: 'tech-3',
     image: '/assets/clinic/tecnologia-3.jpg',
     alt: 'Equipamento e tecnologia odontológica moderna para procedimentos precisos e seguros',
-    objectPosition: 'object-[center_45%]',
-  },
-  {
-    id: 'tech-4',
-    image: '/assets/clinic/tecnologia-microscopio.png',
-    alt: 'Microscópio odontológico utilizado na endodontia com microscopia',
     objectPosition: 'object-[center_45%]',
   },
 ];

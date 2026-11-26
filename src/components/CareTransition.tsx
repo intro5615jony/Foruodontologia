@@ -12,7 +12,7 @@ export const CareTransition: React.FC<CareTransitionProps> = ({ onOpenBooking })
     >
       {/* 1. Protagonist Wide Photography */}
       <img
-        src="/assets/hero/DOUTORAS2-1.jpg"
+        src="/assets/hero/doutoras-daylight-2025.jpg"
         alt="Ambiente e equipe For U Odontologia Especializada"
         className="absolute inset-0 w-full h-full object-cover object-[center_25%] brightness-[0.72] contrast-[1.02] saturate-[0.96] filter"
         loading="lazy"

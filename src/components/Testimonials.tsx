@@ -72,8 +72,18 @@ export const Testimonials: React.FC = () => {
                   </p>
                 </div>
                 <div className="pt-4 border-t border-[#E9DFCF]/60 flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-full bg-[#B88A5A] text-[#F7F4EF] flex items-center justify-center shrink-0 text-sm font-semibold" aria-hidden="true">
+                  <div className="relative w-10 h-10 rounded-full bg-[#B88A5A] text-[#F7F4EF] flex items-center justify-center shrink-0 text-sm font-semibold overflow-hidden" aria-hidden="true">
                     {item.authorLabel.charAt(0)}
+                    {item.avatarUrl && (
+                      <img
+                        src={item.avatarUrl}
+                        alt=""
+                        className="absolute inset-0 w-full h-full object-cover"
+                        loading="lazy"
+                        referrerPolicy="no-referrer"
+                        onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                      />
+                    )}
                   </div>
                   <div className="min-w-0">
                     <p className="text-xs uppercase tracking-wider text-[#3B332D] font-medium truncate">{item.authorLabel}</p>

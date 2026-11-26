@@ -100,7 +100,7 @@ export const PhilosophyThree: React.FC<PhilosophyThreeProps> = () => {
             <div className="relative rounded-2xl overflow-hidden bg-white shadow-xs border border-[#E9DFCF] aspect-[1/1] sm:aspect-[1.11/1] w-full max-w-md mx-auto lg:max-w-none">
               <img
                 src="/assets/specialists/3doutoras.png"
-                alt="Dra. Roberta, Dra. Fabiana e Dra. Tatiana - Equipe For U Odontologia Especializada"
+                alt="Dra. Fabiana, Dra. Roberta e Dra. Tatiana - Equipe For U Odontologia Especializada"
                 className="w-full h-full object-contain sm:object-cover sm:object-top brightness-[0.99] contrast-[1.01]"
                 loading="lazy"
               />
@@ -108,7 +108,7 @@ export const PhilosophyThree: React.FC<PhilosophyThreeProps> = () => {
 
               <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-5 right-3 sm:right-5 p-3 rounded-xl bg-[#F7F4EF]/95 backdrop-blur-sm border border-[#E9DFCF] text-center">
                 <p className="text-xs sm:text-sm font-medium text-[#3B332D]">
-                  Dra. Roberta • Dra. Fabiana • Dra. Tatiana
+                  Dra. Fabiana • Dra. Roberta • Dra. Tatiana
                 </p>
                 <span className="block text-[10px] sm:text-[11px] text-[#B88A5A] uppercase tracking-wider font-semibold mt-0.5">
                   Cirurgiãs-Dentistas • For U Odontologia

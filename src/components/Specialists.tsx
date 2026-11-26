@@ -81,7 +81,7 @@ export const Specialists: React.FC<SpecialistsProps> = ({ onSelectDoctor }) => {
             Conheça as Especialistas
           </h2>
           <p className="text-[#3B332D]/80 text-base sm:text-lg font-light leading-relaxed">
-            Três cirurgiãs-dentistas com formações complementares, unidas para proporcionar um atendimento ético, acolhedor e dedicado.
+            Cirurgiãs-dentistas com formações complementares, unidas para proporcionar um atendimento ético, acolhedor e dedicado.
           </p>
         </div>
 

@@ -294,6 +294,7 @@ export const BookingContact: React.FC<BookingContactProps> = ({
                     <option value="Dra. Fabiana Monte Callado">Dra. Fabiana Monte Callado</option>
                     <option value="Dra. Roberta dos S. Rodrigues Asselta">Dra. Roberta dos S. Rodrigues Asselta</option>
                     <option value="Dra. Tatiana Sugano">Dra. Tatiana Sugano</option>
+                    <option value="Dra. Giulia Bautista G. Barbosa">Dra. Giulia Bautista G. Barbosa</option>
                   </select>
                 </div>
 

@@ -45,11 +45,14 @@ export const WhyForU: React.FC<WhyForUProps> = () => {
                   Diferenciais
                 </span>
                 <h2 className="font-heading text-3xl sm:text-4xl lg:text-[2.75rem] text-[#F7F4EF] font-normal leading-[1.18] tracking-tight mb-4 sm:mb-5">
-                  Por que a For U?
+                  Por que escolher a For U?
                 </h2>
-                <p className="text-[#E9DFCF]/85 text-sm sm:text-base font-light leading-relaxed">
-                  Acreditamos que cuidar de um sorriso é, antes de tudo, cuidar de uma pessoa. Na For U, cada paciente é recebido com atenção, respeito e carinho. Nosso compromisso vai além dos tratamentos odontológicos: queremos proporcionar saúde, confiança e bem-estar, valorizando a individualidade e a história de cada pessoa.
-                </p>
+                <div className="space-y-3 text-[#E9DFCF]/85 text-sm sm:text-base font-light leading-relaxed">
+                  <p>Porque, na For U, o compromisso vai além dos tratamentos odontológicos.</p>
+                  <p>Nosso propósito é cuidar de pessoas, respeitando seus desejos, necessidades e expectativas.</p>
+                  <p>Unimos saúde, estética e harmonização facial para valorizar a beleza de forma natural e equilibrada.</p>
+                  <p>Saúde e estética transformam não somente a aparência, mas também contribuem para a qualidade de vida e o bem-estar.</p>
+                </div>
               </div>
 
               {/* Editorial Differentials: Icon + Title + Description without cards or boxes */}

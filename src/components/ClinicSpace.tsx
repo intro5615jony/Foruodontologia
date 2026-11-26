@@ -40,6 +40,12 @@ const ADVANCED_TECH_SLIDES = [
     alt: 'Equipamento e tecnologia odontológica moderna para procedimentos precisos e seguros',
     objectPosition: 'object-[center_45%]',
   },
+  {
+    id: 'tech-4',
+    image: '/assets/clinic/tecnologia-microscopio.png',
+    alt: 'Microscópio odontológico utilizado na endodontia com microscopia',
+    objectPosition: 'object-[center_45%]',
+  },
 ];
 
 const DENTAL_OFFICE_SLIDES = [

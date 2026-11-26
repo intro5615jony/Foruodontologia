@@ -1,31 +1,8 @@
-import React, { useState } from 'react';
-import { Star, ArrowRight, ChevronLeft, ChevronRight, User } from 'lucide-react';
+import React from 'react';
+import { Star, ArrowRight } from 'lucide-react';
 import { TESTIMONIAL_PLACEHOLDERS, CLINIC_INFO, GOOGLE_RATING } from '../data';
 
 export const Testimonials: React.FC = () => {
-  const [activeMobileIndex, setActiveMobileIndex] = useState(0);
-  const [touchStart, setTouchStart] = useState<number | null>(null);
-
-  const handleTouchStart = (e: React.TouchEvent) => {
-    setTouchStart(e.targetTouches[0].clientX);
-  };
-
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    if (touchStart === null) return;
-    const touchEnd = e.changedTouches[0].clientX;
-    const diff = touchStart - touchEnd;
-    if (diff > 50) {
-      // swipe left -> next
-      setActiveMobileIndex((prev) => (prev + 1) % TESTIMONIAL_PLACEHOLDERS.length);
-    } else if (diff < -50) {
-      // swipe right -> prev
-      setActiveMobileIndex(
-        (prev) => (prev - 1 + TESTIMONIAL_PLACEHOLDERS.length) % TESTIMONIAL_PLACEHOLDERS.length
-      );
-    }
-    setTouchStart(null);
-  };
-
   return (
     <section
       id="avaliacoes"
@@ -70,141 +47,42 @@ export const Testimonials: React.FC = () => {
           </div>
         </div>
 
-        {/* 3. Desktop Reviews Grid — 3 highlights, light editorial layout, no heavy cards */}
-        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-x-10 lg:gap-x-12 gap-y-12 lg:gap-y-14 items-stretch">
-          {TESTIMONIAL_PLACEHOLDERS.map((item, idx) => (
-            <div
-              key={item.id}
-              className="flex flex-col justify-between"
-            >
-              <div>
-                {/* Header: Stars & Google Origin */}
-                <div className="flex items-center justify-between mb-5">
-                  <div className="flex items-center gap-1 text-[#B88A5A]">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-3.5 h-3.5 fill-[#B88A5A] text-[#B88A5A]" />
-                    ))}
+        {/* 3. Carrossel contínuo (direita → esquerda), pausa ao passar o mouse */}
+        <div className="reviews-marquee relative -mx-4 sm:-mx-6 lg:-mx-8 overflow-hidden" aria-label="Avaliações de pacientes no Google">
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-10 sm:w-24 z-10 bg-gradient-to-r from-[#F7F4EF] to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-10 sm:w-24 z-10 bg-gradient-to-l from-[#F7F4EF] to-transparent" />
+          <div className="reviews-track flex w-max py-2">
+            {[...TESTIMONIAL_PLACEHOLDERS, ...TESTIMONIAL_PLACEHOLDERS].map((item, idx) => (
+              <article
+                key={`${item.id}-${idx}`}
+                aria-hidden={idx >= TESTIMONIAL_PLACEHOLDERS.length}
+                className="w-[290px] sm:w-[360px] mr-5 sm:mr-8 shrink-0 flex flex-col justify-between rounded-2xl bg-[#FAF8F5] border border-[#E9DFCF] p-5 sm:p-7"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center gap-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-3.5 h-3.5 fill-[#B88A5A] text-[#B88A5A]" />
+                      ))}
+                    </div>
+                    <span className="text-[11px] uppercase tracking-wider text-[#3B332D]/50 font-medium">Google</span>
                   </div>
-                  <span className="text-[11px] uppercase tracking-wider text-[#3B332D]/50 font-medium">
-                    Google
-                  </span>
-                </div>
-
-                {/* Review Text Placeholder */}
-                <p className="text-sm text-[#3B332D]/85 font-light leading-relaxed mb-6 italic">
-                  "{item.quotePlaceholder}"
-                </p>
-              </div>
-
-              {/* Patient Attribution */}
-              <div className="pt-4 border-t border-[#E9DFCF]/60 mt-auto flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-[#E9DFCF] text-[#B88A5A] flex items-center justify-center shrink-0">
-                  <User className="w-4 h-4 text-[#B88A5A]" />
-                </div>
-                <div className="min-w-0">
-                  <p className="text-xs uppercase tracking-wider text-[#3B332D] font-medium truncate">
-                    {item.authorLabel}
+                  <p className="text-sm text-[#3B332D]/85 font-light leading-relaxed italic mb-6">
+                    "{item.quotePlaceholder}"
                   </p>
-                  <span className="text-[11px] text-[#3B332D]/50 block">
-                    Avaliação via Google
-                  </span>
                 </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* 4. Mobile Reviews Carousel — 1 review at a time with simple, accessible touch controls */}
-        <div
-          className="block md:hidden"
-          onTouchStart={handleTouchStart}
-          onTouchEnd={handleTouchEnd}
-        >
-          {(() => {
-            const currentItem = TESTIMONIAL_PLACEHOLDERS[activeMobileIndex];
-            return (
-              <div className="pb-2">
-                {/* Stars & Origin */}
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-1 text-[#B88A5A]">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-3.5 h-3.5 fill-[#B88A5A] text-[#B88A5A]" />
-                    ))}
+                <div className="pt-4 border-t border-[#E9DFCF]/60 flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-full bg-[#B88A5A] text-[#F7F4EF] flex items-center justify-center shrink-0 text-sm font-semibold" aria-hidden="true">
+                    {item.authorLabel.charAt(0)}
                   </div>
-                  <span className="text-[11px] uppercase tracking-wider text-[#3B332D]/50 font-medium">
-                    Google
-                  </span>
-                </div>
-
-                {/* Review Text */}
-                <p className="text-sm sm:text-base text-[#3B332D]/85 font-light leading-relaxed mb-6 italic min-h-[72px]">
-                  "{currentItem.quotePlaceholder}"
-                </p>
-
-                {/* Attribution */}
-                <div className="pt-4 border-t border-[#E9DFCF]/60 flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-[#E9DFCF] text-[#B88A5A] flex items-center justify-center shrink-0">
-                      <User className="w-4 h-4 text-[#B88A5A]" />
-                    </div>
-                    <div>
-                      <p className="text-xs uppercase tracking-wider text-[#3B332D] font-medium">
-                        {currentItem.authorLabel}
-                      </p>
-                      <span className="text-[11px] text-[#3B332D]/50 block">
-                        Avaliação via Google
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Carousel Arrows */}
-                  <div className="flex items-center gap-2">
-                    <button
-                      type="button"
-                      aria-label="Avaliação anterior"
-                      onClick={() =>
-                        setActiveMobileIndex(
-                          (prev) =>
-                            (prev - 1 + TESTIMONIAL_PLACEHOLDERS.length) %
-                            TESTIMONIAL_PLACEHOLDERS.length
-                        )
-                      }
-                      className="w-10 h-10 rounded-full border border-[#E9DFCF] flex items-center justify-center text-[#3B332D]/70 hover:text-[#3B332D] hover:bg-[#E9DFCF]/50 transition-colors cursor-pointer"
-                    >
-                      <ChevronLeft className="w-4 h-4" />
-                    </button>
-                    <button
-                      type="button"
-                      aria-label="Próxima avaliação"
-                      onClick={() =>
-                        setActiveMobileIndex(
-                          (prev) => (prev + 1) % TESTIMONIAL_PLACEHOLDERS.length
-                        )
-                      }
-                      className="w-10 h-10 rounded-full border border-[#E9DFCF] flex items-center justify-center text-[#3B332D]/70 hover:text-[#3B332D] hover:bg-[#E9DFCF]/50 transition-colors cursor-pointer"
-                    >
-                      <ChevronRight className="w-4 h-4" />
-                    </button>
+                  <div className="min-w-0">
+                    <p className="text-xs uppercase tracking-wider text-[#3B332D] font-medium truncate">{item.authorLabel}</p>
+                    <span className="text-[11px] text-[#3B332D]/50 block">Avaliação via Google</span>
                   </div>
                 </div>
-
-                {/* Dots indicator */}
-                <div className="flex items-center justify-center gap-2 mt-5">
-                  {TESTIMONIAL_PLACEHOLDERS.map((_, i) => (
-                    <button
-                      key={i}
-                      type="button"
-                      aria-label={`Ir para avaliação ${i + 1}`}
-                      onClick={() => setActiveMobileIndex(i)}
-                      className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-                        i === activeMobileIndex ? 'w-6 bg-[#B88A5A]' : 'w-1.5 bg-[#E9DFCF]'
-                      }`}
-                    />
-                  ))}
-                </div>
-              </div>
-            );
-          })()}
+              </article>
+            ))}
+          </div>
         </div>
 
         {/* 5. Single End-of-Section CTA: VER TODAS AS AVALIAÇÕES NO GOOGLE → */}

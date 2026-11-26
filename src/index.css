@@ -281,3 +281,14 @@
   }
 }
 
+
+/* Carrossel contínuo de avaliações (direita → esquerda) */
+@keyframes reviews-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.reviews-track { animation: reviews-scroll 45s linear infinite; }
+.reviews-marquee:hover .reviews-track { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  .reviews-track { animation-duration: 120s; }
+}

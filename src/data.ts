@@ -424,8 +424,8 @@ export const TREATMENTS: TreatmentItem[] = [
     highlightTag: 'Terapêutico & Estético',
     shortDescription: 'Aplicação da toxina botulínica para finalidades funcionais odontológicas e estéticas.',
     fullDescription: 'Procedimento realizado para auxiliar no controle de queixas como bruxismo, apertamento dental e suavização de linhas na região orofacial.',
-    image: '/assets/treatments/botox.jpg',
-    objectPosition: '50% 30%',
+    image: '/assets/treatments/botox-real.jpg',
+    objectPosition: 'center',
     modalObjectPosition: 'center center',
     modalObjectFit: 'contain',
     benefits: [
@@ -523,7 +523,7 @@ export const TREATMENTS: TreatmentItem[] = [
     highlightTag: 'Harmonização',
     shortDescription: 'Procedimentos para equilíbrio e proporcionalidade entre o sorriso e os contornos faciais.',
     fullDescription: 'Avaliação das proporções faciais e procedimentos clínicos integrados ao sorriso para promoção de harmonia e bem-estar.',
-    image: '/assets/treatments/harmonizacao-orofacial.jpg',
+    image: '/assets/treatments/harmonizacao-real.jpg',
     objectPosition: '50% 45%',
     modalObjectPosition: 'center center',
     modalObjectFit: 'contain',
@@ -588,7 +588,7 @@ export const TREATMENTS: TreatmentItem[] = [
     highlightTag: 'Ortopedia',
     shortDescription: 'Direcionamento do desenvolvimento ósseo e muscular das arcadas dentárias e da face.',
     fullDescription: 'Tratamento preventivo e interceptativo que atua nas bases ósseas e musculares durante as fases de crescimento, auxiliando no equilíbrio funcional e respiratório.',
-    image: '/assets/treatments/ortopedia-funcional.png',
+    image: '/assets/treatments/ortopedia-funcional-real.jpg',
     objectPosition: '50% 52%',
     modalObjectPosition: '50% 52%',
     benefits: [
@@ -605,7 +605,7 @@ export const TREATMENTS: TreatmentItem[] = [
     highlightTag: 'Prevenção',
     shortDescription: 'Consultas periódicas de profilaxia, remoção de tártaro e orientação para manutenção da saúde bucal.',
     fullDescription: 'Acompanhamento preventivo com exame clínico criterioso, limpeza profissional e orientações de higiene bucal para evitar cáries e doenças gengivais.',
-    image: 'https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=1000&q=85',
+    image: '/assets/treatments/prevencao.jpg',
     benefits: [
       'Limpeza e profilaxia profissional',
       'Diagnóstico precoce de alterações bucais',

@@ -90,12 +90,12 @@ export const Treatments: React.FC<TreatmentsProps> = ({
     }
   }, [selectedTreatmentId, selectedTreatmentTimestamp]);
 
-  // Ordenação dinâmica alfabética crescente (A-Z) com localeCompare pt-BR
+  // Ordem definida em src/data.ts (alfabética, com Cirurgia logo após Clínica Geral, conforme reunião de 03/11)
   const filteredTreatments = (
     activeCategory === 'all'
       ? [...TREATMENTS]
       : TREATMENTS.filter(t => t.category === activeCategory)
-  ).sort((a, b) => a.title.localeCompare(b.title, 'pt-BR', { sensitivity: 'base' }));
+  );
 
   return (
     <section

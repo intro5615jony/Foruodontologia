@@ -187,7 +187,8 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
                   <span className="text-[10px] text-[#E9DFCF]/60 block uppercase font-medium">
                     Horário de Atendimento
                   </span>
-                  <p className="text-xs text-[#E9DFCF]/90">Segunda a sexta-feira: 8h às 18h</p>
+                  <p className="text-xs text-[#E9DFCF]/90">Segunda a quinta-feira: 8h às 18h</p>
+                  <p className="text-xs text-[#E9DFCF]/90">Sexta-feira: 8h às 17h</p>
                 </div>
               </div>
 

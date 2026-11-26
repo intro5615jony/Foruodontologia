@@ -510,6 +510,7 @@ export const BookingContact: React.FC<BookingContactProps> = ({
                   <div>
                     <strong className="block font-medium text-[#3B332D] mb-0.5">Horário de Atendimento</strong>
                     <span className="block">{CLINIC_INFO.hours.weekdays}</span>
+                    <span className="block">{CLINIC_INFO.hours.friday}</span>
                   </div>
                 </div>
 

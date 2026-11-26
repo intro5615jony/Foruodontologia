@@ -41,8 +41,8 @@ export const CLINIC_INFO = {
 
   // Horários informados (segunda a quinta: 8h às 18h | sexta: 8h às 17h)
   hours: {
-    weekdays: 'Segunda a sexta-feira: 8h às 18h',
-    friday: '',
+    weekdays: 'Segunda a quinta-feira: 8h às 18h',
+    friday: 'Sexta-feira: 8h às 17h',
   },
 
   // Formas de pagamento

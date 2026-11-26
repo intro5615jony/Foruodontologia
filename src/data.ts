@@ -699,24 +699,6 @@ export const TESTIMONIAL_PLACEHOLDERS: TestimonialPlaceholderItem[] = [
     source: 'Google',
   },
   {
-    id: 'review-04',
-    authorLabel: 'Mirian O.',
-    quotePlaceholder: "Parabéns pela estrutura e pelo clima familiar da clínica. A gente se sente em casa desde a chegada. A doutora Tatiana é excelente! Explica cada etapa do tratamento com muita clareza, o que traz uma segurança imensa pra gente.",
-    source: 'Google',
-  },
-  {
-    id: 'review-05',
-    authorLabel: 'Vanessa S.',
-    quotePlaceholder: "Se tivesse a opção de 1000 estrelas eu daria! Eu conheci as dras Fabiana e Roberta em 2007 após um acidente onde tive a boca destruída, perdi dente, tive a mordida totalmente desalinhada e diversas fraturas no rosto que impactaram nos dentes. A dra Fabiana me acolheu de forma muito especial naquele momento horrível que eu estava vivendo, sempre fui atendida de forma muito humanizada e com muito carinho. O resultado do tratamento com elas foi melhor do que eu esperava, elas me devolveram a autoestima e hoje sou feliz demais com meu sorriso! A família inteira virou paciente, hoje a minha filha de 7 anos ama ir à dentista! <3",
-    source: 'Google',
-  },
-  {
-    id: 'review-06',
-    authorLabel: 'Patricia B.',
-    quotePlaceholder: "Estive no consultório e fui atendida pela Dra Giulia que foi muito atenciosa e resolveu meu problema de forma muito tranquila. O ambiente é muito agradável e as funcionárias foram muito simpáticas! Com certeza voltarei e recomendo!",
-    source: 'Google',
-  },
-  {
     id: 'review-07',
     authorLabel: 'Roberto M.',
     quotePlaceholder: "Sou paciente de muitos anos da Dra. Tatiana e, agora, mais recentemente, minha filha passou a ser cliente da Dra. Fabiana. Ambas profissionais da mais elevada qualidade. Toda a clínica trabalha com um conceito de atendimento a cliente jamais visto e incomparável a outras clínicas e profissionais. Recomendo MUITO a Clínica For U Odontologia e todos os profissionais que lá trabalham. Parabéns !!!",
@@ -726,12 +708,6 @@ export const TESTIMONIAL_PLACEHOLDERS: TestimonialPlaceholderItem[] = [
     id: 'review-08',
     authorLabel: 'Fernanda D.',
     quotePlaceholder: "Clínica com profissionais maravilhosos! Toda nossa família são pacientes há anos! Atendimento acolhedor, profissional e com resultados muito positivos! Super recomendo!",
-    source: 'Google',
-  },
-  {
-    id: 'review-09',
-    authorLabel: 'Júlio G.',
-    quotePlaceholder: "Excelente clínica odontológica para crianças e adultos. Várias especialidades. Profissionais de excelência e atendimento muito atencioso.",
     source: 'Google',
   },
 ];

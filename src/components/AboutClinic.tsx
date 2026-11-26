@@ -1,5 +1,4 @@
 import React from 'react';
-import { Users2, HeartHandshake, ShieldCheck, Sparkles } from 'lucide-react';
 
 interface AboutClinicProps {
   onOpenBooking?: () => void;
@@ -58,7 +57,7 @@ export const AboutClinic: React.FC<AboutClinicProps> = () => {
             </p>
 
             {/* 4. Texto Institucional */}
-            <div className="space-y-3.5 text-sm sm:text-base text-[#3B332D]/85 font-light leading-relaxed mb-6 sm:mb-7">
+            <div className="space-y-3.5 text-sm sm:text-base text-[#3B332D]/85 font-light leading-relaxed">
               <p>
                 A For U Odontologia Especializada nasceu da união de três profissionais que compartilham o mesmo propósito: oferecer uma odontologia pautada na confiança, no acolhimento e no cuidado às necessidades de cada paciente.
               </p>
@@ -66,75 +65,6 @@ export const AboutClinic: React.FC<AboutClinicProps> = () => {
                 Com áreas de atuação complementares, as dentistas reúnem conhecimentos e experiências profissionais para oferecer um tratamento odontológico integrado, que valoriza a saúde e o bem-estar em todas as suas dimensões.
               </p>
             </div>
-
-            {/* 5. Pilares da For U: Linha fina divisória + Grade de 4 Diferenciais (2x2) */}
-            <div className="border-t border-[#E9DFCF] pt-5 sm:pt-6 mb-6 sm:mb-7">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 sm:gap-x-8 gap-y-4 sm:gap-y-5">
-                
-                {/* Diferencial 1: UNIÃO */}
-                <div className="flex items-start gap-3 group">
-                  <div className="w-10 h-10 rounded-full bg-[#E9DFCF]/60 border border-[#E9DFCF] text-[#B88A5A] flex items-center justify-center shrink-0 mt-0.5 transition-colors group-hover:bg-[#E9DFCF]">
-                    <Users2 className="w-4.5 h-4.5 text-[#B88A5A]" strokeWidth={1.8} />
-                  </div>
-                  <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-[#3B332D]">
-                      União
-                    </h4>
-                    <p className="text-xs sm:text-[13px] text-[#3B332D]/80 font-light leading-relaxed">
-                      Três profissionais com visões integradas para cada caso.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Diferencial 2: ACOLHIMENTO */}
-                <div className="flex items-start gap-3 group">
-                  <div className="w-10 h-10 rounded-full bg-[#E9DFCF]/60 border border-[#E9DFCF] text-[#B88A5A] flex items-center justify-center shrink-0 mt-0.5 transition-colors group-hover:bg-[#E9DFCF]">
-                    <HeartHandshake className="w-4.5 h-4.5 text-[#B88A5A]" strokeWidth={1.8} />
-                  </div>
-                  <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-[#3B332D]">
-                      Acolhimento
-                    </h4>
-                    <p className="text-xs sm:text-[13px] text-[#3B332D]/80 font-light leading-relaxed">
-                      Consultas sem pressa, com escuta atenta e empatia.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Diferencial 3: CONFIANÇA */}
-                <div className="flex items-start gap-3 group">
-                  <div className="w-10 h-10 rounded-full bg-[#E9DFCF]/60 border border-[#E9DFCF] text-[#B88A5A] flex items-center justify-center shrink-0 mt-0.5 transition-colors group-hover:bg-[#E9DFCF]">
-                    <ShieldCheck className="w-4.5 h-4.5 text-[#B88A5A]" strokeWidth={1.8} />
-                  </div>
-                  <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-[#3B332D]">
-                      Confiança
-                    </h4>
-                    <p className="text-xs sm:text-[13px] text-[#3B332D]/80 font-light leading-relaxed">
-                      Transparência nos diagnósticos e planos de tratamento.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Diferencial 4: COMPLEMENTARIDADE */}
-                <div className="flex items-start gap-3 group">
-                  <div className="w-10 h-10 rounded-full bg-[#E9DFCF]/60 border border-[#E9DFCF] text-[#B88A5A] flex items-center justify-center shrink-0 mt-0.5 transition-colors group-hover:bg-[#E9DFCF]">
-                    <Sparkles className="w-4.5 h-4.5 text-[#B88A5A]" strokeWidth={1.8} />
-                  </div>
-                  <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-[#3B332D]">
-                      Complementaridade
-                    </h4>
-                    <p className="text-xs sm:text-[13px] text-[#3B332D]/80 font-light leading-relaxed">
-                      Diferentes áreas de atuação que permitem uma visão mais completa das suas necessidades.
-                    </p>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-
 
           </div>
 

@@ -21,7 +21,7 @@ export const AboutClinic: React.FC<AboutClinicProps> = () => {
             <div className="relative rounded-2xl overflow-hidden bg-[#E9DFCF]/40 shadow-xs border border-[#E9DFCF] aspect-[3/4] sm:aspect-[4/5] lg:aspect-[3/4] xl:aspect-[4/5] max-w-sm sm:max-w-md mx-auto lg:max-w-none">
               <img
                 src="/assets/aistudio/Retrato_alegre_em_cl_nica_moderna_985923cd.png"
-                alt="Dra. Roberta, Dra. Fabiana e Dra. Tatiana - For U Odontologia Especializada"
+                alt="Dra. Fabiana, Dra. Roberta e Dra. Tatiana - For U Odontologia Especializada"
                 className="w-full h-full object-cover object-top brightness-[1.0] contrast-[1.01]"
                 loading="lazy"
               />
@@ -29,7 +29,7 @@ export const AboutClinic: React.FC<AboutClinicProps> = () => {
               {/* Faixa clara, discreta com cantos arredondados e texto centralizado */}
               <div className="absolute bottom-3.5 sm:bottom-4 left-3.5 sm:left-4 right-3.5 sm:right-4 bg-[#F7F4EF]/95 backdrop-blur-md py-3 px-4 rounded-xl border border-[#E9DFCF] shadow-xs text-center">
                 <p className="text-xs sm:text-[13px] font-medium text-[#3B332D] leading-tight">
-                  Dra. Roberta • Dra. Fabiana • Dra. Tatiana
+                  Dra. Fabiana • Dra. Roberta • Dra. Tatiana
                 </p>
                 <span className="block text-[9.5px] sm:text-[10px] text-[#B88A5A] uppercase tracking-[0.18em] font-semibold mt-1">
                   CIRURGIÃS-DENTISTAS • FOR U ODONTOLOGIA

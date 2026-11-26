@@ -62,7 +62,7 @@ export const CLINIC_INFO = {
   epao: '',
   cnes: '',
   cnpj: '',
-  googleReviewsUrl: 'https://maps.google.com/?q=Rua+Bar%C3%A3o+do+Triunfo,+88,+sala+406+-+Brooklin,+S%C3%A3o+Paulo+-+SP,+04602-000',
+  googleReviewsUrl: 'https://www.google.com/maps/place/Foru+Odontologia/@-23.6271169,-46.6855009,17z/data=!4m8!3m7!1s0x94ce5a7eba27a4b3:0xeb0940962b2cf713!8m2!3d-23.6271169!4d-46.6855009!9m1!1b1',
 };
 
 // 01.1 & 01.2 — Centralização das Mensagens e URLs de WhatsApp da For U Odontologia Especializada
@@ -676,24 +676,62 @@ export const CLINIC_SPACE_PHOTOS: ClinicSpacePhoto[] = [
   },
 ];
 
-// 11 — AVALIAÇÕES (Experiências de pacientes na For U Odontologia)
+// 11 — AVALIAÇÕES (transcritas do perfil da For U no Google em 26/11/2026; nota 5,0 com 33 avaliações)
+export const GOOGLE_RATING = { score: '5,0', count: 33 };
+
 export const TESTIMONIAL_PLACEHOLDERS: TestimonialPlaceholderItem[] = [
   {
     id: 'review-01',
-    authorLabel: 'Paciente For U',
-    quotePlaceholder: 'Atendimento impecável desde a recepção até a consulta. As doutoras explicam cada detalhe com muita calma e clareza, transmitindo total segurança e acolhimento.',
+    authorLabel: 'Eduardo A.',
+    quotePlaceholder: "Recomendo muito! O consultório é moderno, super bem equipado e passa muita confiança. A Dra. Tatiana é uma profissional fantástica: extremamente detalhista, segura e atenta a cada detalhe do atendimento. Sem dúvidas, uma ótima profissional.",
     source: 'Google',
   },
   {
     id: 'review-02',
-    authorLabel: 'Paciente For U',
-    quotePlaceholder: 'Espaço acolhedor, pontualidade britânica e profissionais extremamente atenciosas e competentes. O cuidado humano e a delicadeza no atendimento fazem toda a diferença.',
+    authorLabel: 'Regis B.',
+    quotePlaceholder: "Super recomendo a clínica. Corpo clínico fantástico. Dras com muita experiência e profundo conhecimento em suas áreas de especialização e atuação. Fui atendido pela Dra Giulia e só tenho a agradecer pela forma simpática e carinhosa que fui tratado!!",
     source: 'Google',
   },
   {
     id: 'review-03',
-    authorLabel: 'Paciente For U',
-    quotePlaceholder: 'Excelente clínica no Brooklin. Tratamento realizado com máxima precisão, conforto e pontualidade. Uma experiência odontológica acolhedora e diferenciada.',
+    authorLabel: 'Luana B.',
+    quotePlaceholder: "Sou atendida pela Dra. Roberta e a Dra. Fabiana! Ambas são excelentes profissionais, extremamente atenciosas e competentes. Sempre que preciso delas, são super atenciosas comigo! Sou muito fã e recomendo muito!",
+    source: 'Google',
+  },
+  {
+    id: 'review-04',
+    authorLabel: 'Mirian O.',
+    quotePlaceholder: "Parabéns pela estrutura e pelo clima familiar da clínica. A gente se sente em casa desde a chegada. A doutora Tatiana é excelente! Explica cada etapa do tratamento com muita clareza, o que traz uma segurança imensa pra gente.",
+    source: 'Google',
+  },
+  {
+    id: 'review-05',
+    authorLabel: 'Vanessa S.',
+    quotePlaceholder: "Se tivesse a opção de 1000 estrelas eu daria! Eu conheci as dras Fabiana e Roberta em 2007 após um acidente onde tive a boca destruída, perdi dente, tive a mordida totalmente desalinhada e diversas fraturas no rosto que impactaram nos dentes. A dra Fabiana me acolheu de forma muito especial naquele momento horrível que eu estava vivendo, sempre fui atendida de forma muito humanizada e com muito carinho. O resultado do tratamento com elas foi melhor do que eu esperava, elas me devolveram a autoestima e hoje sou feliz demais com meu sorriso! A família inteira virou paciente, hoje a minha filha de 7 anos ama ir à dentista! <3",
+    source: 'Google',
+  },
+  {
+    id: 'review-06',
+    authorLabel: 'Patricia B.',
+    quotePlaceholder: "Estive no consultório e fui atendida pela Dra Giulia que foi muito atenciosa e resolveu meu problema de forma muito tranquila. O ambiente é muito agradável e as funcionárias foram muito simpáticas! Com certeza voltarei e recomendo!",
+    source: 'Google',
+  },
+  {
+    id: 'review-07',
+    authorLabel: 'Roberto M.',
+    quotePlaceholder: "Sou paciente de muitos anos da Dra. Tatiana e, agora, mais recentemente, minha filha passou a ser cliente da Dra. Fabiana. Ambas profissionais da mais elevada qualidade. Toda a clínica trabalha com um conceito de atendimento a cliente jamais visto e incomparável a outras clínicas e profissionais. Recomendo MUITO a Clínica For U Odontologia e todos os profissionais que lá trabalham. Parabéns !!!",
+    source: 'Google',
+  },
+  {
+    id: 'review-08',
+    authorLabel: 'Fernanda D.',
+    quotePlaceholder: "Clínica com profissionais maravilhosos! Toda nossa família são pacientes há anos! Atendimento acolhedor, profissional e com resultados muito positivos! Super recomendo!",
+    source: 'Google',
+  },
+  {
+    id: 'review-09',
+    authorLabel: 'Júlio G.',
+    quotePlaceholder: "Excelente clínica odontológica para crianças e adultos. Várias especialidades. Profissionais de excelência e atendimento muito atencioso.",
     source: 'Google',
   },
 ];

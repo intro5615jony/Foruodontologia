@@ -23,16 +23,16 @@ const WAITING_ROOM_SLIDES = [
 
 const ADVANCED_TECH_SLIDES = [
   {
-    id: 'tech-1',
-    image: '/assets/clinic/tecnologia-1.jpg',
-    alt: 'Scanner intraoral 3D digital para escaneamento e diagnóstico de alta precisão',
-    objectPosition: 'object-[center_35%]',
-  },
-  {
     id: 'tech-2',
     image: '/assets/clinic/tecnologia-microscopio-real.jpg',
     alt: 'Microscópio odontológico da For U utilizado na endodontia com microscopia',
     objectPosition: 'object-[center_45%]',
+  },
+  {
+    id: 'tech-1',
+    image: '/assets/clinic/tecnologia-1.jpg',
+    alt: 'Scanner intraoral 3D digital para escaneamento e diagnóstico de alta precisão',
+    objectPosition: 'object-[center_35%]',
   },
   {
     id: 'tech-3',
@@ -135,14 +135,11 @@ export const ClinicSpace: React.FC = () => {
         
         {/* Section Header */}
         <div className="max-w-3xl mb-10 sm:mb-16">
-          <span className="text-xs font-semibold tracking-[0.22em] sm:tracking-[0.25em] text-[#B88A5A] uppercase block mb-2.5 sm:mb-3">
-            O Espaço Físico
-          </span>
           <h2 className="font-heading text-2xl sm:text-4xl md:text-5xl text-[#3B332D] font-normal leading-[1.2] sm:leading-[1.18] tracking-tight mb-3 sm:mb-4">
-            Um espaço pensado para você.
+            Uma clínica pensada para você e sua família.
           </h2>
           <p className="text-[#3B332D]/80 text-sm sm:text-base lg:text-lg font-light leading-relaxed">
-            Ambientes planejados com iluminação suave e acolhimento em cada detalhe, em localização de fácil acesso no Brooklin.
+            Ambientes planejados com iluminação suave e acolhimento em cada detalhe, em localização de fácil acesso, próximo ao Brooklin.
           </p>
         </div>
 
@@ -177,11 +174,8 @@ export const ClinicSpace: React.FC = () => {
                   Sala de Espera
                 </h3>
                 <p className="text-xs sm:text-sm text-[#E9DFCF]/85 font-light">
-                  Um ambiente acolhedor e confortável, pensado para receber você e sua família com carinho e tranquilidade.
+                  Ambiente acolhedor para receber você e sua família.
                 </p>
-                <span className="inline-block text-[9.5px] sm:text-[10px] uppercase tracking-wider text-[#D4B88A] mt-1.5 sm:mt-2 font-semibold">
-                  ESPAÇO & ACOLHIMENTO FOR U
-                </span>
               </div>
             </div>
           </div>
@@ -210,7 +204,7 @@ export const ClinicSpace: React.FC = () => {
                   Tecnologia Avançada
                 </h4>
                 <p className="text-[11px] text-[#E9DFCF]/80 font-light">
-                  Equipamentos e tecnologias que proporcionam mais precisão, segurança e conforto em cada atendimento.
+                  Mais precisão, segurança e conforto em cada atendimento.
                 </p>
               </div>
             </div>

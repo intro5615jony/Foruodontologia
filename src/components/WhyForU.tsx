@@ -92,9 +92,6 @@ export const WhyForU: React.FC<WhyForUProps> = () => {
                 <p className="font-heading text-xs sm:text-sm text-[#F7F4EF] font-normal leading-snug">
                   "Mais do que transformar sorrisos, cuidamos de pessoas."
                 </p>
-                <span className="block text-[9.5px] text-[#D4B88A] uppercase tracking-wider mt-1 font-semibold">
-                  RECEPÇÃO FOR U
-                </span>
               </div>
             </div>
           </div>

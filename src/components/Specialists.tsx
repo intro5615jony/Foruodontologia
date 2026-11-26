@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { GraduationCap, Calendar } from 'lucide-react';
+import { GraduationCap, Calendar, Flower2 } from 'lucide-react';
 import { SPECIALISTS } from '../data';
 import { Specialist } from '../types';
 
@@ -122,6 +122,9 @@ export const Specialists: React.FC<SpecialistsProps> = ({ onSelectDoctor }) => {
                     {/* 1. Nome da Profissional */}
                     <h3 className="font-heading text-2xl sm:text-3xl lg:text-[2.35rem] text-[#3B332D] font-normal leading-tight mb-2">
                       {specialist.name}
+                      {specialist.id === 'dra-roberta' && (
+                        <Flower2 className="inline-block w-5 h-5 sm:w-6 sm:h-6 text-[#B88A5A] ml-2 -mt-1 align-middle" strokeWidth={1.6} aria-hidden="true" />
+                      )}
                     </h3>
 
                     {/* 2. CROSP & Função */}

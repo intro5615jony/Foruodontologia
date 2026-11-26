@@ -63,7 +63,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
             {/* Endereço Atualizado */}
             <div className="text-xs text-[#E9DFCF]/80 font-light space-y-0.5">
               <p className="font-medium text-[#F7F4EF]">Rua Barão do Triunfo, 88 — Sala/Conjunto 406</p>
-              <p>Brooklin — São Paulo/SP</p>
+              <p>Próximo ao Brooklin — São Paulo/SP</p>
               <p className="text-[11px] text-[#E9DFCF]/60">CEP 04602-000</p>
             </div>
           </div>
@@ -187,8 +187,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
                   <span className="text-[10px] text-[#E9DFCF]/60 block uppercase font-medium">
                     Horário de Atendimento
                   </span>
-                  <p className="text-xs text-[#E9DFCF]/90">Segunda a quinta-feira: 8h às 18h</p>
-                  <p className="text-xs text-[#E9DFCF]/90">Sexta-feira: 8h às 17h</p>
+                  <p className="text-xs text-[#E9DFCF]/90">Segunda a sexta-feira: 8h às 18h</p>
                 </div>
               </div>
 

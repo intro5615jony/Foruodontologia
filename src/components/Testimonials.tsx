@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Star, ArrowRight, ChevronLeft, ChevronRight, User } from 'lucide-react';
-import { TESTIMONIAL_PLACEHOLDERS, CLINIC_INFO } from '../data';
+import { TESTIMONIAL_PLACEHOLDERS, CLINIC_INFO, GOOGLE_RATING } from '../data';
 
 export const Testimonials: React.FC = () => {
   const [activeMobileIndex, setActiveMobileIndex] = useState(0);
@@ -62,22 +62,20 @@ export const Testimonials: React.FC = () => {
               </div>
               <div className="hidden sm:block h-3.5 w-px bg-[#E9DFCF]" />
               <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs text-[#3B332D]/70 font-light">
-                <span>Avaliação 5.0 estrelas</span>
+                <span className="font-medium text-[#3B332D]">{GOOGLE_RATING.score}</span>
                 <span className="text-[#3B332D]/40">•</span>
-                <span>Google Avaliações</span>
+                <span>{GOOGLE_RATING.count} avaliações no Google</span>
               </div>
             </div>
           </div>
         </div>
 
         {/* 3. Desktop Reviews Grid — 3 highlights, light editorial layout, no heavy cards */}
-        <div className="hidden md:grid md:grid-cols-3 divide-x divide-[#E9DFCF] items-stretch">
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-x-10 lg:gap-x-12 gap-y-12 lg:gap-y-14 items-stretch">
           {TESTIMONIAL_PLACEHOLDERS.map((item, idx) => (
             <div
               key={item.id}
-              className={`flex flex-col justify-between ${
-                idx === 0 ? 'pr-8 lg:pr-10' : idx === 1 ? 'px-8 lg:px-10' : 'pl-8 lg:pl-10'
-              }`}
+              className="flex flex-col justify-between"
             >
               <div>
                 {/* Header: Stars & Google Origin */}
@@ -93,7 +91,7 @@ export const Testimonials: React.FC = () => {
                 </div>
 
                 {/* Review Text Placeholder */}
-                <p className="text-sm sm:text-base text-[#3B332D]/85 font-light leading-relaxed mb-8 italic">
+                <p className="text-sm text-[#3B332D]/85 font-light leading-relaxed mb-6 italic">
                   "{item.quotePlaceholder}"
                 </p>
               </div>

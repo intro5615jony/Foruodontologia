@@ -17,6 +17,15 @@
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+      // LGPD: medição só após consentimento (Consent Mode v2)
+      var foruConsent = null;
+      try { foruConsent = localStorage.getItem('foru-cookie-consent'); } catch (e) {}
+      gtag('consent', 'default', {
+        analytics_storage: foruConsent === 'granted' ? 'granted' : 'denied',
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied'
+      });
       gtag('js', new Date());
       gtag('config', 'G-ZF64NQ2DTG');
     </script>

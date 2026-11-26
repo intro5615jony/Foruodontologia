@@ -26,7 +26,7 @@ export const VisualBreak: React.FC = () => {
           "A precisão técnica encontra o acolhimento humano em cada detalhe."
         </blockquote>
         <p className="text-xs sm:text-sm text-[#FFFFFF] uppercase tracking-[0.25em] font-semibold drop-shadow-xs">
-          BROOKLIN · SÃO PAULO
+          PRÓXIMO AO BROOKLIN · SÃO PAULO
         </p>
       </div>
     </section>

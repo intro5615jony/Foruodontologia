@@ -41,8 +41,8 @@ export const CLINIC_INFO = {
 
   // Horários informados (segunda a quinta: 8h às 18h | sexta: 8h às 17h)
   hours: {
-    weekdays: 'Segunda a quinta-feira: 8h às 18h',
-    friday: 'Sexta-feira: 8h às 17h',
+    weekdays: 'Segunda a sexta-feira: 8h às 18h',
+    friday: '',
   },
 
   // Formas de pagamento
@@ -260,7 +260,7 @@ export const HERO_SLIDES: HeroSlide[] = [
     id: 'hero-01',
     image: '/assets/hero/recepcao-foru.png',
     alt: 'Recepção da For U Odontologia Especializada com balcão de atendimento e logotipo institucional na parede',
-    caption: 'Recepção For U • Conforto e Elegância',
+    caption: '',
     objectPosition: 'object-[41%_18%]',
     imageClassName: 'hero-reception-frame',
   },
@@ -416,39 +416,7 @@ export const SPECIALISTS: Specialist[] = [
 
 // 06 — TRATAMENTOS (Organizados rigorosamente em ordem alfabética crescente A–Z)
 export const TREATMENTS: TreatmentItem[] = [
-  {
-    id: 'botox',
-    title: 'Botox',
-    subtitle: 'Aplicação Clínica e Terapêutica',
-    category: 'estetica',
-    highlightTag: 'Terapêutico & Estético',
-    shortDescription: 'Aplicação da toxina botulínica para finalidades funcionais odontológicas e estéticas.',
-    fullDescription: 'Procedimento realizado para auxiliar no controle de queixas como bruxismo, apertamento dental e suavização de linhas na região orofacial.',
-    image: '/assets/treatments/botox-real.jpg',
-    objectPosition: 'center',
-    modalObjectPosition: 'center center',
-    modalObjectFit: 'contain',
-    benefits: [
-      'Auxílio no relaxamento da musculatura mastigatória',
-      'Aplicação precisa em consultório',
-      'Acompanhamento dos resultados',
-    ],
-  },
-  {
-    id: 'cirurgia',
-    title: 'Cirurgia',
-    subtitle: 'Cirurgia Oral',
-    category: 'reabilitacao',
-    highlightTag: 'Cirurgia',
-    shortDescription: 'Procedimentos cirúrgicos odontológicos realizados com planejamento e cuidado em cada etapa.',
-    fullDescription: 'Avaliação clínica e radiográfica para indicação e realização de procedimentos cirúrgicos, como extrações, com orientações completas antes e depois do atendimento.',
-    image: '/assets/treatments/cirurgia.jpg',
-    benefits: [
-      'Avaliação e planejamento individualizados',
-      'Orientações pré e pós-operatórias',
-      'Acompanhamento da recuperação',
-    ],
-  },
+
   {
     id: 'clinica-geral',
     title: 'Clínica Geral',
@@ -463,7 +431,22 @@ export const TREATMENTS: TreatmentItem[] = [
       'Restaurações e cuidados funcionais',
       'Encaminhamento e planejamento integrado',
     ],
+  },  {
+    id: 'cirurgia',
+    title: 'Cirurgia',
+    subtitle: 'Cirurgia Oral',
+    category: 'reabilitacao',
+    highlightTag: 'Cirurgia',
+    shortDescription: 'Procedimentos cirúrgicos odontológicos realizados com planejamento e cuidado em cada etapa.',
+    fullDescription: 'Avaliação clínica e radiográfica para indicação e realização de procedimentos cirúrgicos, como extrações, com orientações completas antes e depois do atendimento.',
+    image: '/assets/treatments/cirurgia.jpg',
+    benefits: [
+      'Avaliação e planejamento individualizados',
+      'Orientações pré e pós-operatórias',
+      'Acompanhamento da recuperação',
+    ],
   },
+
   {
     id: 'disfuncao-atm',
     title: 'Disfunção de ATM',
@@ -522,7 +505,7 @@ export const TREATMENTS: TreatmentItem[] = [
     category: 'estetica',
     highlightTag: 'Harmonização',
     shortDescription: 'Procedimentos para equilíbrio e proporcionalidade entre o sorriso e os contornos faciais.',
-    fullDescription: 'Avaliação das proporções faciais e procedimentos clínicos integrados ao sorriso para promoção de harmonia e bem-estar.',
+    fullDescription: 'Avaliação das proporções faciais e procedimentos clínicos integrados ao sorriso, incluindo a aplicação de toxina botulínica, para promoção de harmonia e bem-estar.',
     image: '/assets/treatments/harmonizacao-real.jpg',
     objectPosition: '50% 45%',
     modalObjectPosition: 'center center',
@@ -556,7 +539,8 @@ export const TREATMENTS: TreatmentItem[] = [
     highlightTag: 'Infantil',
     shortDescription: 'Atendimento odontológico voltado a bebês, crianças e adolescentes com abordagem gentil e educativa.',
     fullDescription: 'Cuidado com a saúde bucal infantil desde os primeiros dentes, acompanhamento do desenvolvimento das arcadas e incentivo a hábitos saudáveis em ambiente tranquilo.',
-    image: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1000&q=85',
+    image: '/assets/treatments/odontopediatria-cantinho.jpg',
+    objectPosition: '50% 60%',
     benefits: [
       'Abordagem gentil e acolhedora',
       'Acompanhamento da dentição decídua e mista',

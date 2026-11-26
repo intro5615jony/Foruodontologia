@@ -129,11 +129,11 @@ export const Hero: React.FC<HeroProps> = () => {
           />
 
           {/* Legenda institucional discreta da fotografia atual (Posicionada no canto inferior direito) */}
-          <div className="absolute bottom-4 sm:bottom-6 lg:bottom-8 right-4 sm:right-6 lg:right-24 z-30 pointer-events-none max-w-[calc(100%-2rem)] sm:max-w-md">
+          {HERO_SLIDES[currentSlideIndex].caption && <div className="absolute bottom-4 sm:bottom-6 lg:bottom-8 right-4 sm:right-6 lg:right-24 z-30 pointer-events-none max-w-[calc(100%-2rem)] sm:max-w-md">
             <p className="text-[10.5px] sm:text-xs text-[#FAF8F5] font-light tracking-wide bg-[#2D241E]/80 backdrop-blur-md px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-full border border-white/20 shadow-md truncate sm:whitespace-normal">
               {HERO_SLIDES[currentSlideIndex].caption}
             </p>
-          </div>
+          </div>}
 
         </div>
 

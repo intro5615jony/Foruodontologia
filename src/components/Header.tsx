@@ -12,7 +12,6 @@ interface HeaderProps {
 // Sincronização centralizada com a fonte única da verdade (TREATMENTS em src/data.ts)
 // Nomes idênticos aos cards e ao modal detalhado, ordenados em ordem alfabética (A-Z) para facilidade de navegação
 const TREATMENTS_DROPDOWN = [...TREATMENTS]
-  .sort((a, b) => a.title.localeCompare(b.title, 'pt-BR', { sensitivity: 'base' }))
   .map((t) => ({
     name: t.title,
     id: t.id,
@@ -170,9 +169,18 @@ export const Header: React.FC<HeaderProps> = ({
               aria-label="For U Odontologia Especializada - Página Inicial"
             >
               <img
+                src="/assets/logo/foru-logo-sem-moldura.png"
+                alt="For U Odontologia Especializada"
+                className={`hidden lg:block transition-all duration-300 object-contain w-auto select-none ${
+                  isScrolled ? 'lg:h-14 xl:h-[62px]' : 'lg:h-16 xl:h-[72px] 2xl:h-[76px]'
+                }`}
+                loading="eager"
+                referrerPolicy="no-referrer"
+              />
+              <img
                 src="/assets/logo/LOGO FOR U.png"
                 alt="For U Odontologia Especializada"
-                className={`transition-all duration-300 object-contain w-auto select-none ${
+                className={`lg:hidden transition-all duration-300 object-contain w-auto select-none ${
                   isScrolled
                     ? 'h-13 sm:h-14 lg:h-16 xl:h-[70px] max-h-[72px]'
                     : 'h-14 sm:h-16 lg:h-18 xl:h-[80px] 2xl:h-[84px] max-h-[86px]'

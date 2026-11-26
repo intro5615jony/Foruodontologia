@@ -487,7 +487,7 @@ export const BookingContact: React.FC<BookingContactProps> = ({
                   Visite a For U
                 </h3>
                 <p className="text-sm text-[#3B332D]/80 font-light leading-relaxed">
-                  Localizada em um ponto de fácil acesso no Brooklin, em São Paulo, com ambiente acolhedor e infraestrutura moderna para o seu conforto.
+                  Localizada em um ponto de fácil acesso, próximo ao Brooklin, em São Paulo, com ambiente acolhedor e infraestrutura moderna para o seu conforto.
                 </p>
               </div>
 
@@ -498,7 +498,7 @@ export const BookingContact: React.FC<BookingContactProps> = ({
                     <strong className="block font-medium text-[#3B332D] mb-0.5">Endereço</strong>
                     <span className="block font-medium text-[#3B332D]">Rua Barão do Triunfo, 88</span>
                     <span className="block">Sala/Conjunto 406</span>
-                    <span className="block">Brooklin — São Paulo/SP</span>
+                    <span className="block">Próximo ao Brooklin — São Paulo/SP</span>
                     <span className="block text-[11px] text-[#3B332D]/60 mt-0.5 font-mono">
                       CEP 04602-000
                     </span>
@@ -510,7 +510,6 @@ export const BookingContact: React.FC<BookingContactProps> = ({
                   <div>
                     <strong className="block font-medium text-[#3B332D] mb-0.5">Horário de Atendimento</strong>
                     <span className="block">{CLINIC_INFO.hours.weekdays}</span>
-                    <span className="block">{CLINIC_INFO.hours.friday}</span>
                   </div>
                 </div>
 

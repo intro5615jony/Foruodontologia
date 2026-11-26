@@ -1,5 +1,5 @@
 import React from 'react';
-import { Users2, HeartHandshake, ShieldCheck, Sparkles, ArrowRight } from 'lucide-react';
+import { Users2, HeartHandshake, ShieldCheck, Sparkles } from 'lucide-react';
 
 interface AboutClinicProps {
   onOpenBooking?: () => void;
@@ -134,16 +134,7 @@ export const AboutClinic: React.FC<AboutClinicProps> = () => {
               </div>
             </div>
 
-            {/* 6. Botão de Navegação para a seção de Especialistas */}
-            <div className="pt-1">
-              <a
-                href="#especialistas"
-                className="inline-flex items-center gap-2 text-xs uppercase tracking-widest font-semibold text-[#B88A5A] hover:text-[#3B332D] transition-colors group cursor-pointer"
-              >
-                <span>CONHEÇA NOSSAS ESPECIALISTAS</span>
-                <ArrowRight className="w-4 h-4 text-[#B88A5A] group-hover:text-[#3B332D] group-hover:translate-x-1 transition-all" />
-              </a>
-            </div>
+
 
           </div>
 

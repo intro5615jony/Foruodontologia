@@ -123,7 +123,7 @@ export const Treatments: React.FC<TreatmentsProps> = ({
             FILTRO MOBILE EXCLUSIVO (< 640px) — DROPDOWN SUSPENSO
             Menu suspenso com campo de seleção elegante e sem corte horizontal
            ========================================================================= */}
-        <div className="block sm:hidden mb-8 w-full" ref={dropdownRef}>
+        <div className="hidden mb-8 w-full" ref={dropdownRef}>
           <span className="text-[11px] font-semibold tracking-[0.22em] text-[#B88A5A] uppercase block mb-2 px-0.5">
             FILTRAR TRATAMENTOS
           </span>
@@ -183,7 +183,7 @@ export const Treatments: React.FC<TreatmentsProps> = ({
             Pills horizontais de categoria com scroll suave se necessário
            ========================================================================= */}
         <div
-          className="hidden sm:flex items-center overflow-x-auto no-scrollbar sm:flex-wrap sm:justify-center gap-2 sm:gap-2.5 pb-2 sm:pb-0 mb-10 sm:mb-16 -mx-4 px-4 sm:mx-0 sm:px-0 scroll-smooth touch-pan-x"
+          className="hidden items-center overflow-x-auto no-scrollbar sm:flex-wrap sm:justify-center gap-2 sm:gap-2.5 pb-2 sm:pb-0 mb-10 sm:mb-16 -mx-4 px-4 sm:mx-0 sm:px-0 scroll-smooth touch-pan-x"
           role="tablist"
           aria-label="Categorias de tratamentos"
         >
@@ -225,8 +225,7 @@ export const Treatments: React.FC<TreatmentsProps> = ({
               <div>
                 {/* 1. FOTOGRAFIA (Protagonista visual, proporção consistente aspect-[4/3], cantos discretos) */}
                 <div
-                  onClick={() => setModalTreatment(treatment)}
-                  className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-[#E9DFCF] border border-[#E9DFCF]/80 cursor-pointer mb-4 sm:mb-6"
+                  className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-[#E9DFCF] border border-[#E9DFCF]/80 mb-4 sm:mb-6"
                 >
                   <img
                     src={treatment.image}
@@ -247,8 +246,7 @@ export const Treatments: React.FC<TreatmentsProps> = ({
 
                 {/* 3. NOME DO TRATAMENTO (Maior destaque tipográfico) */}
                 <h3
-                  onClick={() => setModalTreatment(treatment)}
-                  className="font-heading text-xl sm:text-2xl lg:text-[26px] text-[#3B332D] font-medium leading-snug tracking-tight mb-2.5 group-hover:text-[#B88A5A] transition-colors cursor-pointer"
+                  className="font-heading text-xl sm:text-2xl lg:text-[26px] text-[#3B332D] font-medium leading-snug tracking-tight mb-2.5"
                 >
                   {treatment.title}
                 </h3>
@@ -270,15 +268,7 @@ export const Treatments: React.FC<TreatmentsProps> = ({
               </div>
 
               {/* 6. AÇÕES: Saber mais / Agendar */}
-              <div className="pt-2 mt-auto flex items-center justify-between border-t border-[#E9DFCF]/60 pt-3">
-                <button
-                  type="button"
-                  onClick={() => setModalTreatment(treatment)}
-                  className="group/btn inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-[#B88A5A] hover:text-[#3B332D] transition-colors py-1.5 cursor-pointer min-h-[44px]"
-                >
-                  <span>Saiba mais</span>
-                  <ArrowRight className="w-3.5 h-3.5 text-[#B88A5A] group-hover/btn:text-[#3B332D] group-hover/btn:translate-x-1 transition-all" />
-                </button>
+              <div className="mt-auto flex items-center justify-end border-t border-[#E9DFCF]/60 pt-3">
                 <button
                   type="button"
                   onClick={() => onOpenBooking(treatment.title)}

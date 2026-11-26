@@ -90,11 +90,11 @@ export default function App() {
         <WhyForU onOpenBooking={() => handleOpenBooking()} />
         <ClinicSpace />
         <Specialists onSelectDoctor={handleDoctorSelect} />
-        <VisualBreak />
         <Treatments onOpenBooking={(treatment) => handleOpenBooking(treatment)} selectedTreatmentId={selectedTreatmentId} selectedTreatmentTimestamp={selectedTreatmentTimestamp} />
         <Testimonials />
         <CareTransition onOpenBooking={() => handleOpenBooking()} />
         <BookingContact initialTreatment={selectedTreatment} initialSpecialist={selectedSpecialist} doctorSelection={doctorSelection} />
+        <VisualBreak />
       </main>
       <Footer onOpenBooking={() => handleOpenBooking()} />
       <AppointmentModal isOpen={isModalOpen} onClose={handleCloseBooking} selectedTreatment={selectedTreatment} selectedSpecialist={selectedSpecialist} />

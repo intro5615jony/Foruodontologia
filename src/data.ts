@@ -76,6 +76,7 @@ export const WHATSAPP_MESSAGES = {
     'dra-fabiana': 'Olá! Gostaria de agendar uma consulta com a Dra. Fabiana Monte Callado. Poderiam me informar os horários disponíveis?',
     'dra-roberta': 'Olá! Gostaria de agendar uma consulta com a Dra. Roberta dos S. Rodrigues Asselta. Poderiam me informar os horários disponíveis?',
     'dra-tatiana': 'Olá! Gostaria de agendar uma consulta com a Dra. Tatiana Sugano. Poderiam me informar os horários disponíveis?',
+    'dra-giulia': 'Olá! Gostaria de agendar uma consulta com a Dra. Giulia Bautista G. Barbosa. Poderiam me informar os horários disponíveis?',
   },
 };
 
@@ -93,6 +94,9 @@ export const getDoctorWhatsAppUrl = (doctorIdOrName: string): string => {
   }
   if (normalized.includes('tatiana')) {
     return getWhatsAppUrl(WHATSAPP_MESSAGES.doctors['dra-tatiana']);
+  }
+  if (normalized.includes('giulia')) {
+    return getWhatsAppUrl(WHATSAPP_MESSAGES.doctors['dra-giulia']);
   }
   return getWhatsAppUrl(WHATSAPP_MESSAGES.general);
 };
@@ -127,6 +131,9 @@ export const normalizeDoctorName = (doctorIdOrName: string): string => {
   }
   if (normalized.includes('tatiana')) {
     return 'Dra. Tatiana Sugano';
+  }
+  if (normalized.includes('giulia')) {
+    return 'Dra. Giulia Bautista G. Barbosa';
   }
   return doctorIdOrName || '';
 };
@@ -428,6 +435,21 @@ export const TREATMENTS: TreatmentItem[] = [
     ],
   },
   {
+    id: 'cirurgia',
+    title: 'Cirurgia',
+    subtitle: 'Cirurgia Oral',
+    category: 'reabilitacao',
+    highlightTag: 'Cirurgia',
+    shortDescription: 'Procedimentos cirúrgicos odontológicos realizados com planejamento e cuidado em cada etapa.',
+    fullDescription: 'Avaliação clínica e radiográfica para indicação e realização de procedimentos cirúrgicos, como extrações, com orientações completas antes e depois do atendimento.',
+    image: '/assets/treatments/cirurgia.jpg',
+    benefits: [
+      'Avaliação e planejamento individualizados',
+      'Orientações pré e pós-operatórias',
+      'Acompanhamento da recuperação',
+    ],
+  },
+  {
     id: 'clinica-geral',
     title: 'Clínica Geral',
     subtitle: 'Diagnóstico e Cuidados Gerais',
@@ -440,6 +462,21 @@ export const TREATMENTS: TreatmentItem[] = [
       'Exame clínico completo',
       'Restaurações e cuidados funcionais',
       'Encaminhamento e planejamento integrado',
+    ],
+  },
+  {
+    id: 'disfuncao-atm',
+    title: 'Disfunção de ATM',
+    subtitle: 'Articulação Temporomandibular',
+    category: 'reabilitacao',
+    highlightTag: 'ATM',
+    shortDescription: 'Avaliação e tratamento de alterações na articulação da mandíbula e na musculatura da mastigação.',
+    fullDescription: 'Diagnóstico de queixas como dores na face, estalos ao abrir a boca, dificuldade de mastigação e apertamento dental, com plano de tratamento individualizado.',
+    image: '/assets/clinica/consultorio-02.webp',
+    benefits: [
+      'Avaliação da articulação e da musculatura',
+      'Plano de tratamento individualizado',
+      'Acompanhamento periódico',
     ],
   },
   {

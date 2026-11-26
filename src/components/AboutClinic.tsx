@@ -60,10 +60,10 @@ export const AboutClinic: React.FC<AboutClinicProps> = () => {
             {/* 4. Texto Institucional */}
             <div className="space-y-3.5 text-sm sm:text-base text-[#3B332D]/85 font-light leading-relaxed mb-6 sm:mb-7">
               <p>
-                A For U Odontologia Especializada nasceu da união de três profissionais que compartilham o mesmo propósito: oferecer um cuidado próximo, individualizado e pensado para cada paciente.
+                A For U Odontologia Especializada nasceu da união de três profissionais que compartilham o mesmo propósito: oferecer uma odontologia pautada na confiança, no acolhimento e no cuidado às necessidades de cada paciente.
               </p>
               <p>
-                Com diferentes áreas de atuação que se complementam, proporcionamos uma visão integrada da saúde bucal, considerando saúde, função, estética e bem-estar em todas as etapas do tratamento.
+                Com áreas de atuação complementares, as dentistas reúnem conhecimentos e experiências profissionais para oferecer um tratamento odontológico integrado, que valoriza a saúde e o bem-estar em todas as suas dimensões.
               </p>
             </div>
 

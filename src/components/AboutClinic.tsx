@@ -19,7 +19,7 @@ export const AboutClinic: React.FC<AboutClinicProps> = () => {
           <div className="lg:col-span-5 w-full">
             <div className="relative rounded-2xl overflow-hidden bg-[#E9DFCF]/40 shadow-xs border border-[#E9DFCF] aspect-[3/4] sm:aspect-[4/5] lg:aspect-[3/4] xl:aspect-[4/5] max-w-sm sm:max-w-md mx-auto lg:max-w-none">
               <img
-                src="/assets/aistudio/Retrato_alegre_em_cl_nica_moderna_985923cd.png"
+                src="/assets/clinic/doutoras-sobre-junho-2024.jpg"
                 alt="Dra. Fabiana, Dra. Roberta e Dra. Tatiana - For U Odontologia Especializada"
                 className="w-full h-full object-cover object-top brightness-[1.0] contrast-[1.01]"
                 loading="lazy"
